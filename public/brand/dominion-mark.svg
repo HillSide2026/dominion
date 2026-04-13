@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" fill="none">
+  <!-- Lower-left block -->
+  <rect x="0" y="24" width="28" height="28" fill="#1440E0"/>
+  <!-- Upper-right block -->
+  <rect x="14" y="0" width="42" height="42" fill="#1440E0"/>
+  <!-- White arrow cutout — upward-right diagonal -->
+  <polygon points="14,26 26,14 42,14 42,26 30,26 30,42 18,42 18,30 14,30" fill="white"/>
+</svg>
