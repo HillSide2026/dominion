@@ -28,13 +28,13 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
         </div>
         <h2 className="mt-8 text-center text-3xl font-semibold text-gray-950">
           {mode === 'signin'
-            ? 'Login to Dominion'
-            : 'Create member access'}
+            ? 'Login to Dominion Partners'
+            : 'Create client portal access'}
         </h2>
         <p className="mt-3 text-center text-sm leading-6 text-gray-600">
           {mode === 'signin'
-            ? 'Access the member dashboard, calculator, and review resources.'
-            : 'Use your work email to create a protected Dominion workspace.'}
+            ? 'Access the client portal, diagnostic tools, and review resources.'
+            : 'Use your work email to create a protected Dominion Partners workspace.'}
         </p>
       </div>
 
@@ -121,7 +121,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
             <div className="relative flex justify-center text-sm">
               <span className="px-2 bg-gray-50 text-gray-500">
                 {mode === 'signin'
-                  ? 'New to Dominion?'
+                  ? 'New to Dominion Partners?'
                   : 'Already have access?'}
               </span>
             </div>
@@ -135,7 +135,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
               className="flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#0584c7] focus:ring-offset-2"
             >
               {mode === 'signin'
-                ? 'Create member access'
+                ? 'Create client portal access'
                 : 'Login with existing access'}
             </Link>
           </div>

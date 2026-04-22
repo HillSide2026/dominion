@@ -31,8 +31,12 @@ function UserMenu() {
 
   if (!user) {
     return (
-      <Button asChild variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50">
-        <Link href="/sign-in">Login</Link>
+      <Button
+        asChild
+        variant="outline"
+        className="rounded-full border-gray-300 px-5 text-gray-700 hover:bg-gray-50"
+      >
+        <Link href="/sign-in">Client Portal</Link>
       </Button>
     );
   }
@@ -54,7 +58,7 @@ function UserMenu() {
         <DropdownMenuItem className="cursor-pointer">
           <Link href="/dashboard" className="flex w-full items-center">
             <Home className="mr-2 h-4 w-4" />
-            <span>Member workspace</span>
+            <span>Client portal</span>
           </Link>
         </DropdownMenuItem>
         <form action={handleSignOut} className="w-full">
@@ -89,10 +93,10 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <div>
           <p className="text-sm font-semibold text-gray-950">
-            Dominion Consulting
+            Dominion Partners
           </p>
           <p className="mt-1 text-xs text-gray-500">
-            Cross-border trade and payment advisory
+            Cross-border trade and payment infrastructure
           </p>
         </div>
         <nav className="flex items-center gap-6">
@@ -106,7 +110,7 @@ function Footer() {
             href="/sign-in"
             className="text-xs text-gray-500 hover:text-gray-900"
           >
-            Login
+            Client Portal
           </Link>
         </nav>
       </div>

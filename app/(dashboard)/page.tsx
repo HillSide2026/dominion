@@ -1,319 +1,151 @@
 import Link from 'next/link';
 import {
   ArrowRight,
-  FileSearch,
-  Route,
-  FileText,
-  Globe,
-  Package,
-  Truck,
-  CreditCard,
-  TrendingUp,
-  CheckCircle2
+  CheckCircle2,
+  Globe2,
+  Landmark
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const whatWeDo = [
+const capabilities = [
   {
-    title: 'Transaction Review',
-    intro: 'Break down the transaction:',
-    items: [
-      'parties and roles',
-      'timing and sequencing',
-      'documentation and dependencies',
-      'exposure across jurisdictions'
-    ],
-    icon: FileSearch
+    label: 'Trade',
+    title: 'Trade Advisory',
+    description:
+      'Market entry, trade structuring, and cross-border operational strategy.',
+    icon: Globe2
   },
   {
-    title: 'Route Analysis',
-    intro: 'Evaluate how the transaction can move across:',
-    items: [
-      'banking pathways',
-      'intermediaries and correspondents',
-      'FX conversion points'
-    ],
-    secondaryIntro: 'Identify:',
-    secondaryItems: [
-      'where risk sits',
-      'where delays occur',
-      'where failure is most likely'
-    ],
-    icon: Route
-  },
-  {
-    title: 'Advisory Outputs',
-    intro: 'Deliver structured materials for:',
-    items: [
-      'internal decision-making',
-      'client communication',
-      'coordination with legal, tax, or compliance advisors'
-    ],
-    icon: FileText
+    label: 'Payments',
+    title: 'Payment Services',
+    description:
+      'Cross-border payments, FX optimization, and financial flow structuring for international businesses.',
+    icon: Landmark
   }
 ];
 
-const scope = [
+const complexityPoints = [
+  'Operate across trade and payments',
+  'Advise at the strategic level and execute at the financial layer',
+  'Access to global network',
+  'Focus on cost, control, and efficiency of capital movement'
+];
+
+const audiences = [
   {
-    title: 'Trade',
-    text: 'Review trade structure, counterparty terms, and supporting documentation.',
-    icon: Globe
+    title: 'Exporters and importers',
+    description: 'Organizations buying and selling across borders'
   },
   {
-    title: 'Customs',
-    text: 'Assess classification, valuation, and cross-border compliance exposure.',
-    icon: Package
+    title: 'International distributors',
+    description:
+      'Businesses coordinating multi-market supply and settlement flows'
   },
   {
-    title: 'Supply Chain',
-    text: 'Evaluate movement of goods, timing dependencies, and operational constraints.',
-    icon: Truck
+    title: 'Industry and trade associations',
+    description: 'Institutions supporting member cross-border activity'
   },
   {
-    title: 'Payments',
-    text: 'Map payment corridors, intermediaries, conversion points, and settlement timing.',
-    icon: CreditCard
-  },
-  {
-    title: 'Investment',
-    text: 'Assess capital flows, intercompany structures, and cross-border movement of funds.',
-    icon: TrendingUp
+    title: 'Governments and public bodies',
+    description:
+      'Public-sector entities involved in trade, development, or international programs'
   }
 ];
 
-const steps = [
+const processSteps = [
   {
-    title: 'Define the transaction',
-    text: 'Client provides transaction details or scenario.'
+    title: 'Assess',
+    description: 'Trade flows, counterparties, and payment structures'
   },
   {
-    title: 'Structured review',
-    text: 'Dominion analyzes structure, constraints, and dependencies.'
+    title: 'Structure',
+    description: 'Jurisdiction, counterparties, and financial pathways'
   },
   {
-    title: 'Route and risk analysis',
-    text: 'We identify viable pathways and where risk concentrates.'
-  },
-  {
-    title: 'Advisory output',
-    text: 'Structured materials delivered for decision and execution.'
+    title: 'Optimize',
+    description: 'Payments, FX, and ongoing flow efficiency'
   }
 ];
 
-const clientTypes = [
-  {
-    title: 'Corporate Treasury',
-    text: 'Teams managing cross-border payments, liquidity, and settlement.'
-  },
-  {
-    title: 'Accounting Practices',
-    text: 'Teams preparing client-facing analysis and transaction support.'
-  },
-  {
-    title: 'Advisory Firms',
-    text: 'Used before engaging legal, tax, or specialist advisors.'
-  }
-];
+const containerClassName = 'mx-auto max-w-6xl px-4 sm:px-6 lg:px-8';
 
 export default function HomePage() {
   return (
-    <main>
-      {/* Hero */}
+    <main className="bg-white">
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold tracking-wide text-[#0614b8] uppercase">
-              Cross-border advisory
+        <div className={`${containerClassName} py-24 sm:py-28 lg:py-36`}>
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0614b8]">
+              Cross-Border Advisory
             </p>
-            <h1 className="mt-5 text-4xl font-semibold leading-tight text-gray-950 sm:text-5xl lg:text-6xl">
-              Consulting for cross-border trade and payments
+            <h1 className="mt-6 text-5xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-[4.5rem] lg:leading-[1.02]">
+              Cross-Border Trade and Payment Infrastructure
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl">
-              Dominion advises on trade, customs, supply chain, investment, and
-              payments by structuring and evaluating cross-border transactions.
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
+              We advise, structure, and optimize international trade and the
+              movement of money behind it.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#0614b8] text-white hover:bg-[#07108f]"
+                className="h-12 rounded-full bg-[#0614b8] px-7 text-white hover:bg-[#07108f]"
               >
-                <Link href="/sign-up">
-                  Request a review
+                <Link href="/sign-in">
+                  Access Client Portal
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/sign-in">Member login</Link>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-12 rounded-full border-slate-300 px-7 text-slate-900 hover:bg-slate-50"
+              >
+                <Link href="#services">View our Services</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What we do */}
-      <section className="border-y border-gray-200 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold text-gray-950">
-              Transaction review before execution
+      <section className="border-t border-slate-200 bg-white">
+        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              Two Integrated Capabilities
             </h2>
-            <p className="mt-4 text-base leading-7 text-gray-600">
-              Dominion works at the transaction layer, where trade, payments,
-              settlement, and regulatory constraints intersect.
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              Dominion Partners operates at the intersection of global trade
+              and financial infrastructure. We support clients in structuring
+              cross-border activity and ensuring the underlying movement of
+              funds is efficient, compliant, and cost-effective.
             </p>
-          </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {whatWeDo.map((item) => (
-              <article key={item.title} className="bg-white p-6 shadow-sm">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#0614b8] text-white">
-                  <item.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold text-gray-950">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-sm font-medium text-gray-700">
-                  {item.intro}
-                </p>
-                <ul className="mt-2 space-y-1">
-                  {item.items.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-2 text-sm leading-6 text-gray-600"
-                    >
-                      <span className="mt-2 block h-1 w-1 shrink-0 rounded-full bg-[#0584c7]" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                {'secondaryIntro' in item && (
-                  <>
-                    <p className="mt-4 text-sm font-medium text-gray-700">
-                      {(item as typeof item & { secondaryIntro: string }).secondaryIntro}
-                    </p>
-                    <ul className="mt-2 space-y-1">
-                      {(item as typeof item & { secondaryItems: string[] }).secondaryItems.map(
-                        (point) => (
-                          <li
-                            key={point}
-                            className="flex items-start gap-2 text-sm leading-6 text-gray-600"
-                          >
-                            <span className="mt-2 block h-1 w-1 shrink-0 rounded-full bg-[#0584c7]" />
-                            {point}
-                          </li>
-                        )
-                      )}
-                    </ul>
-                  </>
-                )}
-              </article>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Advisory scope */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold text-gray-950">
-              Where Dominion concentrates its work
-            </h2>
-            <p className="mt-4 text-base leading-7 text-gray-600">
-              Dominion advises across the components that determine whether a
-              cross-border transaction succeeds or fails.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-px bg-gray-200 border border-gray-200 sm:grid-cols-2 lg:grid-cols-5">
-            {scope.map((area) => (
-              <article key={area.title} className="bg-white p-6">
-                <div className="flex h-9 w-9 items-center justify-center bg-[#0614b8] text-white">
-                  <area.icon className="h-4 w-4" />
-                </div>
-                <h3 className="mt-4 text-sm font-semibold text-gray-950">
-                  {area.title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-gray-600">
-                  {area.text}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How we work */}
-      <section className="border-y border-gray-200 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-semibold text-gray-950">
-            How engagements work
-          </h2>
-          <div className="mt-10 grid gap-0 lg:grid-cols-4">
-            {steps.map((step, index) => (
-              <div
-                key={step.title}
-                className="relative border-l border-gray-200 pl-6 py-4 lg:border-l-0 lg:border-t-2 lg:border-t-[#0614b8] lg:pl-0 lg:pt-6 lg:pr-6"
+      <section id="services" className="bg-slate-50">
+        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+            {capabilities.map((capability) => (
+              <article
+                key={capability.title}
+                className="flex min-h-[280px] flex-col rounded-[28px] border border-slate-200 bg-white p-8 shadow-[0_18px_50px_-42px_rgba(15,23,42,0.35)] sm:p-10 lg:p-12"
               >
-                <span className="text-xs font-semibold text-[#0614b8] uppercase tracking-wide">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h3 className="mt-2 text-base font-semibold text-gray-950">
-                  {step.title}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#e9efff] text-[#0614b8]">
+                    <capability.icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    {capability.label}
+                  </span>
+                </div>
+                <h3 className="mt-10 text-3xl font-semibold tracking-tight text-slate-950">
+                  {capability.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-gray-600">
-                  {step.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Clarity before execution */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold text-gray-950">
-              Clarity before execution
-            </h2>
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl">
-            {[
-              'Identify where risk sits in the transaction.',
-              'Separate operational issues from regulatory or tax questions.',
-              'Clarify timing, dependencies, and counterparties.',
-              'Prepare materials for internal and external review.',
-              'Reduce uncertainty before funds or goods move.'
-            ].map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0584c7]" />
-                <p className="text-sm leading-6 text-gray-700">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who we work with */}
-      <section className="border-y border-gray-200 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold text-gray-950">
-              Who we work with
-            </h2>
-            <p className="mt-4 text-base leading-7 text-gray-600">
-              Dominion works with teams responsible for the accuracy and
-              execution of cross-border transactions.
-            </p>
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {clientTypes.map((client) => (
-              <article key={client.title} className="bg-white p-6 shadow-sm">
-                <h3 className="text-base font-semibold text-gray-950">
-                  {client.title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-gray-600">
-                  {client.text}
+                <p className="mt-5 max-w-lg text-lg leading-8 text-slate-600">
+                  {capability.description}
                 </p>
               </article>
             ))}
@@ -321,47 +153,114 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Global collaboration */}
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold text-gray-950">
-              Global collaboration
-            </h2>
-            <p className="mt-4 text-sm leading-7 text-gray-600">
-              Dominion is a collaborating firm of Andersen Global. Where
-              required, engagements can be coordinated with tax, legal, and
-              trade specialists across jurisdictions.
-            </p>
+        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+          <div className="grid gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
+            <div className="max-w-xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                Built for Cross-Border Complexity
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-slate-600">
+                We are built for transactions that cross jurisdictions,
+                counterparties, currencies, and operational systems.
+              </p>
+            </div>
+            <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 sm:p-10">
+              <div className="divide-y divide-slate-200">
+                {complexityPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="flex gap-4 py-5 first:pt-0 last:pb-0"
+                  >
+                    <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-[#0614b8] shadow-sm ring-1 ring-slate-200">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    <p className="text-base font-medium leading-7 text-slate-800 sm:text-lg">
+                      {point}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="bg-gray-950">
-        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-16 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <div>
-            <h2 className="text-2xl font-semibold text-white">
-              Request a transaction review
+      <section className="bg-slate-50">
+        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              Who We Serve
             </h2>
-            <p className="mt-2 text-sm leading-6 text-gray-300">
-              Submit a transaction or scenario for structured analysis before
-              execution.
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              We support organizations managing complex cross-border trade and
+              financial activity.
             </p>
           </div>
-          <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-            <Button asChild className="bg-white text-gray-950 hover:bg-gray-100">
-              <Link href="/sign-up">
-                Request a review
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-[28px] bg-slate-200 sm:grid-cols-2">
+            {audiences.map((audience) => (
+              <article key={audience.title} className="bg-white p-8 sm:p-10">
+                <h3 className="text-xl font-semibold text-slate-950">
+                  {audience.title}
+                </h3>
+                <p className="mt-4 max-w-md text-base leading-7 text-slate-600">
+                  {audience.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="how-we-work" className="bg-white">
+        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              How We Work
+            </h2>
+          </div>
+          <div className="relative mt-14">
+            <div className="absolute left-[10%] right-[10%] top-6 hidden h-px bg-slate-200 lg:block" />
+            <div className="grid gap-12 lg:grid-cols-3 lg:gap-10">
+              {processSteps.map((step, index) => (
+                <div key={step.title} className="relative">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white text-sm font-semibold text-[#0614b8] shadow-sm">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <h3 className="mt-8 text-2xl font-semibold text-slate-950">
+                    {step.title}
+                  </h3>
+                  <p className="mt-4 max-w-xs text-lg leading-8 text-slate-600">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white pb-24 sm:pb-28 lg:pb-32">
+        <div className={containerClassName}>
+          <div className="rounded-[32px] bg-slate-950 px-8 py-14 sm:px-12 sm:py-16 lg:flex lg:items-end lg:justify-between lg:px-16 lg:py-20">
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                Cross-border operations require both strategic clarity and
+                financial precision.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-300">
+                We provide both.
+              </p>
+            </div>
             <Button
               asChild
-              variant="outline"
-              className="border-gray-600 text-white hover:bg-gray-800"
+              size="lg"
+              className="mt-10 h-12 rounded-full bg-white px-7 text-slate-950 hover:bg-slate-100 lg:mt-0"
             >
-              <Link href="/sign-in">Member login</Link>
+              <Link href="/sign-up">
+                Speak with us
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>

@@ -5,9 +5,9 @@ import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { SWRConfig } from 'swr';
 
 export const metadata: Metadata = {
-  title: 'Dominion Consulting | Cross-Border Transaction Advisory',
+  title: 'Dominion Partners | Cross-Border Trade and Payment Infrastructure',
   description:
-    'Cross-border transaction advisory for professional teams. Trade, payments, and settlement.'
+    'Dominion Partners advises, structures, and optimizes cross-border trade and the movement of money behind it.'
 };
 
 export const viewport: Viewport = {

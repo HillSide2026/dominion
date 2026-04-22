@@ -45,7 +45,7 @@ export function FlowSignalLogo({
           Dominion
         </span>
         <span className="text-[11px] font-semibold tracking-[0.22em] text-gray-400 uppercase leading-none">
-          Consulting
+          Partners
         </span>
       </span>
     </span>
@@ -57,7 +57,7 @@ export function FlowSignalLogo({
           Dominion
         </span>
         <span className="text-[9px] font-semibold tracking-[0.2em] text-gray-400 uppercase leading-none">
-          Consulting
+          Partners
         </span>
       </span>
     </span>
