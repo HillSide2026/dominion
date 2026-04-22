@@ -1,5 +1,5 @@
 import { desc, and, eq, isNull } from 'drizzle-orm';
-import { db } from './drizzle';
+import { getDb } from './drizzle';
 import { activityLogs, teamMembers, users } from './schema';
 import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth/session';
@@ -10,7 +10,15 @@ export async function getUser() {
     return null;
   }
 
-  const sessionData = await verifyToken(sessionCookie.value);
+  let sessionData;
+
+  try {
+    sessionData = await verifyToken(sessionCookie.value);
+  } catch (error) {
+    console.error('Failed to verify session token:', error);
+    return null;
+  }
+
   if (
     !sessionData ||
     !sessionData.user ||
@@ -23,20 +31,27 @@ export async function getUser() {
     return null;
   }
 
-  const user = await db
-    .select()
-    .from(users)
-    .where(and(eq(users.id, sessionData.user.id), isNull(users.deletedAt)))
-    .limit(1);
+  try {
+    const db = getDb();
+    const user = await db
+      .select()
+      .from(users)
+      .where(and(eq(users.id, sessionData.user.id), isNull(users.deletedAt)))
+      .limit(1);
 
-  if (user.length === 0) {
+    if (user.length === 0) {
+      return null;
+    }
+
+    return user[0];
+  } catch (error) {
+    console.error('Failed to load user from database:', error);
     return null;
   }
-
-  return user[0];
 }
 
 export async function getUserWithTeam(userId: number) {
+  const db = getDb();
   const result = await db
     .select({
       user: users,
@@ -56,6 +71,7 @@ export async function getActivityLogs() {
     throw new Error('User not authenticated');
   }
 
+  const db = getDb();
   return await db
     .select({
       id: activityLogs.id,
@@ -77,6 +93,7 @@ export async function getTeamForUser() {
     return null;
   }
 
+  const db = getDb();
   const result = await db.query.teamMembers.findFirst({
     where: eq(teamMembers.userId, user.id),
     with: {

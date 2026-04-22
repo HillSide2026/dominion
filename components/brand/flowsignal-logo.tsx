@@ -41,10 +41,10 @@ export function FlowSignalLogo({
     <span className="flex items-center gap-3">
       <DominionMark className="h-10 w-auto" />
       <span className="flex flex-col leading-none gap-0.5">
-        <span className="text-2xl font-bold text-gray-950 tracking-tight leading-none">
+        <span className="text-2xl font-bold text-brand-ink tracking-tight leading-none">
           Dominion
         </span>
-        <span className="text-[11px] font-semibold tracking-[0.22em] text-gray-400 uppercase leading-none">
+        <span className="text-[11px] font-semibold tracking-[0.22em] text-brand-text uppercase leading-none">
           Partners
         </span>
       </span>
@@ -53,10 +53,10 @@ export function FlowSignalLogo({
     <span className="flex items-center gap-2.5">
       <DominionMark className="h-8 w-auto" />
       <span className="flex flex-col leading-none gap-0.5">
-        <span className="text-base font-bold text-gray-950 tracking-tight leading-none">
+        <span className="text-base font-bold text-brand-ink tracking-tight leading-none">
           Dominion
         </span>
-        <span className="text-[9px] font-semibold tracking-[0.2em] text-gray-400 uppercase leading-none">
+        <span className="text-[9px] font-semibold tracking-[0.2em] text-brand-text uppercase leading-none">
           Partners
         </span>
       </span>

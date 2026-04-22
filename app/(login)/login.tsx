@@ -10,6 +10,7 @@ import { Loader2 } from 'lucide-react';
 import { FlowSignalLogo } from '@/components/brand/flowsignal-logo';
 import { signIn, signUp } from './actions';
 import { ActionState } from '@/lib/auth/middleware';
+import { ALLOWED_SIGNUP_DOMAINS_TEXT } from '@/lib/auth/signup-policy';
 
 export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
   const searchParams = useSearchParams();
@@ -26,16 +27,23 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
         <div className="flex justify-center">
           <FlowSignalLogo lockup imageClassName="w-48" />
         </div>
-        <h2 className="mt-8 text-center text-3xl font-semibold text-gray-950">
+        <h2 className="mt-8 text-center text-3xl font-semibold text-brand-ink">
           {mode === 'signin'
             ? 'Login to Dominion Partners'
             : 'Create client portal access'}
         </h2>
-        <p className="mt-3 text-center text-sm leading-6 text-gray-600">
+        <p className="mt-3 text-center text-sm leading-6 text-brand-text">
           {mode === 'signin'
             ? 'Access the client portal, diagnostic tools, and review resources.'
             : 'Use your work email to create a protected Dominion Partners workspace.'}
         </p>
+        {mode === 'signup' && (
+          <p className="mt-4 text-center text-xs leading-6 text-brand-text">
+            Beta access is limited to approved domains:
+            {' '}
+            {ALLOWED_SIGNUP_DOMAINS_TEXT}
+          </p>
+        )}
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
@@ -58,7 +66,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
                 defaultValue={state.email}
                 required
                 maxLength={50}
-                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#0584c7] focus:outline-none focus:ring-[#0584c7] sm:text-sm"
+                className="relative block w-full appearance-none rounded-md border border-brand-border px-3 py-2 text-brand-ink placeholder:text-brand-text focus:z-10 focus:border-brand-primary focus:outline-none focus:ring-brand-primary sm:text-sm"
                 placeholder="name@company.com"
               />
             </div>
@@ -79,11 +87,10 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
                 autoComplete={
                   mode === 'signin' ? 'current-password' : 'new-password'
                 }
-                defaultValue={state.password}
                 required
                 minLength={8}
                 maxLength={100}
-                className="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-[#0584c7] focus:outline-none focus:ring-[#0584c7] sm:text-sm"
+                className="relative block w-full appearance-none rounded-md border border-brand-border px-3 py-2 text-brand-ink placeholder:text-brand-text focus:z-10 focus:border-brand-primary focus:outline-none focus:ring-brand-primary sm:text-sm"
                 placeholder="Enter your password"
               />
             </div>
@@ -96,13 +103,13 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
           <div>
             <Button
               type="submit"
-              className="flex w-full items-center justify-center border border-transparent bg-[#0614b8] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#07108f] focus:outline-none focus:ring-2 focus:ring-[#0584c7] focus:ring-offset-2"
+              className="flex w-full items-center justify-center border border-transparent bg-brand-primary px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-primary-hover focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
               disabled={pending}
             >
               {pending ? (
                 <>
                   <Loader2 className="animate-spin mr-2 h-4 w-4" />
-                  Loading...
+                  {mode === 'signin' ? 'Signing in...' : 'Creating access...'}
                 </>
               ) : mode === 'signin' ? (
                 'Sign in'
@@ -132,7 +139,7 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
               href={`${mode === 'signin' ? '/sign-up' : '/sign-in'}${
                 redirect ? `?redirect=${redirect}` : ''
               }`}
-              className="flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#0584c7] focus:ring-offset-2"
+              className="flex w-full justify-center rounded-md border border-brand-border bg-white px-4 py-2 text-sm font-medium text-brand-ink shadow-sm hover:bg-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
             >
               {mode === 'signin'
                 ? 'Create client portal access'

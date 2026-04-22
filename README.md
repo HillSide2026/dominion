@@ -47,8 +47,9 @@ The seed script creates a local test user:
 
 ## Environment
 
-`pnpm db:setup` creates `.env` with:
+Portal auth currently requires:
 
 - `POSTGRES_URL`
-- `BASE_URL`
 - `AUTH_SECRET`
+
+`BASE_URL` is optional at the moment and is not used by the current sign-in or sign-up flow.

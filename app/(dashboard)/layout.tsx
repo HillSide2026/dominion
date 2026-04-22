@@ -34,7 +34,7 @@ function UserMenu() {
       <Button
         asChild
         variant="outline"
-        className="rounded-full border-gray-300 px-5 text-gray-700 hover:bg-gray-50"
+        className="rounded-full border-brand-border px-5 text-brand-ink hover:bg-brand-muted"
       >
         <Link href="/sign-in">Client Portal</Link>
       </Button>
@@ -76,8 +76,8 @@ function UserMenu() {
 
 function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <header className="border-b border-brand-border bg-white">
+      <div className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <FlowSignalLogo />
         <Suspense fallback={<div className="h-9 w-16" />}>
           <UserMenu />
@@ -89,26 +89,26 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+    <footer className="border-t border-brand-border bg-white">
+      <div className="mx-auto flex max-w-content flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <div>
-          <p className="text-sm font-semibold text-gray-950">
+          <p className="text-sm font-semibold text-brand-ink">
             Dominion Partners
           </p>
-          <p className="mt-1 text-xs text-gray-500">
+          <p className="mt-1 text-xs text-brand-text">
             Cross-border trade and payment infrastructure
           </p>
         </div>
         <nav className="flex items-center gap-6">
           <Link
             href="/disclaimer"
-            className="text-xs text-gray-500 hover:text-gray-900"
+            className="text-xs text-brand-text hover:text-brand-ink"
           >
             Disclaimers
           </Link>
           <Link
             href="/sign-in"
-            className="text-xs text-gray-500 hover:text-gray-900"
+            className="text-xs text-brand-text hover:text-brand-ink"
           >
             Client Portal
           </Link>
