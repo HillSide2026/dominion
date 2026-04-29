@@ -52,13 +52,15 @@
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
-  --color-brand-primary: #1d4ed8;
-  --color-brand-primary-hover: #1e40af;
-  --color-brand-ink: #0b1220;
-  --color-brand-text: #475569;
+  --color-brand-primary: #155EEF;
+  --color-brand-primary-hover: #0F4CD1;
+  --color-brand-ink: #08111F;
+  --color-brand-text: #64748b;
   --color-brand-muted: #f8fafc;
   --color-brand-card: #f1f5f9;
   --color-brand-border: #e2e8f0;
+  --color-brand-navy: #071225;
+  --color-brand-accent: #EAF2FF;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);

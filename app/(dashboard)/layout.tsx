@@ -89,30 +89,86 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="border-t border-brand-border bg-white">
-      <div className="mx-auto flex max-w-content flex-col gap-4 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-        <div>
-          <p className="text-sm font-semibold text-brand-ink">
-            Dominion Partners
-          </p>
-          <p className="mt-1 text-xs text-brand-text">
-            Cross-border trade and payment infrastructure
+    <footer style={{ background: '#071225' }}>
+      <div className="mx-auto max-w-content px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <p className="text-base font-semibold text-white">
+              Dominion Partners
+            </p>
+            <p className="mt-2 text-sm text-slate-500">
+              Cross-border trade and payment infrastructure
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+              Navigate
+            </p>
+            <nav className="mt-4 flex flex-col gap-3">
+              <Link
+                href="/"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Home
+              </Link>
+              <Link
+                href="#services"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Services
+              </Link>
+              <Link
+                href="#how-we-work"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                How We Work
+              </Link>
+            </nav>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+              Services
+            </p>
+            <nav className="mt-4 flex flex-col gap-3">
+              <Link
+                href="/trade-advisory"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Trade Advisory
+              </Link>
+              <Link
+                href="/payment-services"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Payment Services
+              </Link>
+            </nav>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+              Legal
+            </p>
+            <nav className="mt-4 flex flex-col gap-3">
+              <Link
+                href="/disclaimer"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Disclaimers
+              </Link>
+              <Link
+                href="/sign-in"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Client Portal
+              </Link>
+            </nav>
+          </div>
+        </div>
+        <div className="mt-16 border-t border-white/10 pt-8">
+          <p className="text-xs text-slate-600">
+            © {new Date().getFullYear()} Dominion Partners. All rights reserved.
           </p>
         </div>
-        <nav className="flex items-center gap-6">
-          <Link
-            href="/disclaimer"
-            className="text-xs text-brand-text hover:text-brand-ink"
-          >
-            Disclaimers
-          </Link>
-          <Link
-            href="/sign-in"
-            className="text-xs text-brand-text hover:text-brand-ink"
-          >
-            Client Portal
-          </Link>
-        </nav>
       </div>
     </footer>
   );

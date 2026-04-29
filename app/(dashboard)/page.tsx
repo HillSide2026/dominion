@@ -74,16 +74,27 @@ const containerClassName = 'mx-auto max-w-content px-4 sm:px-6 lg:px-8';
 export default function HomePage() {
   return (
     <main className="bg-white">
-      <section className="bg-white">
-        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
-          <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-eyebrow text-brand-primary">
+      {/* Hero */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #102A6B 0%, #071225 100%)' }}
+      >
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 60% at 70% -10%, rgba(75,158,255,0.10), transparent)'
+          }}
+        />
+        <div className={`${containerClassName} relative py-24 sm:py-32 lg:py-36`}>
+          <div className="max-w-[780px]">
+            <p className="text-sm font-semibold uppercase tracking-eyebrow text-blue-300">
               Cross-Border Advisory
             </p>
-            <h1 className="mt-6 text-5xl font-semibold tracking-[-0.04em] text-brand-ink sm:text-6xl lg:text-[4.5rem] lg:leading-[1.02]">
+            <h1 className="mt-6 text-5xl font-semibold tracking-tight leading-[1.06] text-white sm:text-6xl lg:text-[4.5rem]">
               Cross-Border Trade and Payment Infrastructure
             </h1>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-brand-text sm:text-xl">
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
               We advise, structure, and optimize international trade and the
               movement of money behind it.
             </p>
@@ -91,7 +102,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="h-12 rounded-full bg-brand-primary px-7 text-white hover:bg-brand-primary-hover"
+                className="h-12 rounded-full bg-[#155EEF] px-7 text-white shadow-none hover:bg-[#0F4CD1]"
               >
                 <Link href="/sign-in">
                   Access Client Portal
@@ -101,20 +112,23 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                variant="outline"
-                className="h-12 rounded-full border-brand-border px-7 text-brand-ink hover:bg-brand-muted"
+                className="h-12 rounded-full border border-white/20 bg-transparent px-7 text-white shadow-none hover:bg-white/10"
               >
                 <Link href="#services">View our Services</Link>
               </Button>
             </div>
+            <p className="mt-8 text-sm text-slate-400">
+              Trusted across jurisdictions, currencies, and counterparties
+            </p>
           </div>
         </div>
       </section>
 
+      {/* Two Integrated Capabilities */}
       <section className="border-t border-brand-border bg-white">
-        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+        <div className={`${containerClassName} py-28 sm:py-32`}>
           <div className="max-w-3xl">
-            <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
+            <h2 className="text-4xl font-semibold tracking-tight text-brand-ink sm:text-5xl">
               Two Integrated Capabilities
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-text">
@@ -127,17 +141,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="bg-brand-muted">
-        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+      {/* Capability cards */}
+      <section id="services" className="bg-white">
+        <div className={`${containerClassName} pb-28 sm:pb-32`}>
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
             {capabilities.map((capability) => (
               <Link
                 key={capability.title}
                 href={capability.href}
-                className="group flex min-h-[280px] flex-col rounded-[28px] border border-brand-border bg-white p-8 shadow-soft transition-colors hover:border-brand-primary/20 sm:p-10 lg:p-12"
+                className="group flex min-h-[280px] flex-col rounded-2xl border border-brand-border bg-gray-50 p-8 shadow-sm transition hover:shadow-md sm:p-10"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-card text-brand-primary">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF2FF] text-[#155EEF]">
                     <capability.icon className="h-5 w-5" />
                   </div>
                   <span className="text-sm font-semibold uppercase tracking-eyebrow text-brand-text">
@@ -150,7 +165,7 @@ export default function HomePage() {
                 <p className="mt-5 max-w-lg text-lg leading-8 text-brand-text">
                   {capability.description}
                 </p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-10 text-sm font-semibold text-brand-primary">
+                <span className="mt-auto inline-flex items-center gap-2 pt-10 text-sm font-semibold text-[#155EEF]">
                   Learn more
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
@@ -160,26 +175,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Built for Cross-Border Complexity */}
       <section className="bg-white">
-        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+        <div className={`${containerClassName} py-24 sm:py-28`}>
           <div className="grid gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
                 Built for Cross-Border Complexity
               </h2>
-              <p className="mt-6 text-lg leading-8 text-brand-text">
+              <p className="mt-8 max-w-sm text-lg leading-8 text-brand-text">
                 We are built for transactions that cross jurisdictions,
                 counterparties, currencies, and operational systems.
               </p>
             </div>
-            <div className="rounded-[28px] border border-brand-border bg-brand-card p-8 sm:p-10">
+            <div className="rounded-2xl bg-gray-50 p-10 shadow-sm">
               <div className="divide-y divide-brand-border">
                 {complexityPoints.map((point) => (
                   <div
                     key={point}
                     className="flex gap-4 py-5 first:pt-0 last:pb-0"
                   >
-                    <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white text-brand-primary shadow-soft ring-1 ring-brand-border">
+                    <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#EAF2FF] text-[#155EEF]">
                       <CheckCircle2 className="h-4 w-4" />
                     </div>
                     <p className="text-base font-medium leading-7 text-brand-ink sm:text-lg">
@@ -193,8 +209,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-brand-muted">
-        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+      {/* Who We Serve */}
+      <section className="bg-gray-50">
+        <div className={`${containerClassName} py-24 sm:py-28`}>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
               Who We Serve
@@ -204,9 +221,12 @@ export default function HomePage() {
               financial activity.
             </p>
           </div>
-          <div className="mt-12 grid gap-px overflow-hidden rounded-[28px] bg-brand-border sm:grid-cols-2">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2">
             {audiences.map((audience) => (
-              <article key={audience.title} className="bg-white p-8 sm:p-10">
+              <article
+                key={audience.title}
+                className="rounded-2xl bg-white p-8 shadow-sm transition hover:shadow-md sm:p-10"
+              >
                 <h3 className="text-xl font-semibold text-brand-ink">
                   {audience.title}
                 </h3>
@@ -219,25 +239,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How We Work */}
       <section id="how-we-work" className="bg-white">
-        <div className={`${containerClassName} py-24 sm:py-28 lg:py-32`}>
+        <div className={`${containerClassName} py-24 sm:py-28`}>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
               How We Work
             </h2>
           </div>
           <div className="relative mt-14">
-            <div className="absolute left-[10%] right-[10%] top-6 hidden h-px bg-brand-border lg:block" />
+            <div className="absolute left-[10%] right-[10%] top-7 hidden h-px bg-gray-200 lg:block" />
             <div className="grid gap-12 lg:grid-cols-3 lg:gap-10">
               {processSteps.map((step, index) => (
-                <div key={step.title} className="relative">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-brand-border bg-white text-sm font-semibold text-brand-primary shadow-soft">
+                <div
+                  key={step.title}
+                  className="relative transition-transform duration-200 hover:-translate-y-0.5"
+                >
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-brand-border bg-white text-sm font-semibold text-[#155EEF] shadow-sm">
                     {String(index + 1).padStart(2, '0')}
                   </div>
-                  <h3 className="mt-8 text-2xl font-semibold text-brand-ink">
+                  <h3 className="mt-8 text-2xl font-semibold text-[#08111F]">
                     {step.title}
                   </h3>
-                  <p className="mt-4 max-w-xs text-lg leading-8 text-brand-text">
+                  <p className="mt-4 max-w-xs text-lg leading-8 text-slate-500">
                     {step.description}
                   </p>
                 </div>
@@ -247,9 +271,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white pb-24 sm:pb-28 lg:pb-32">
+      {/* Dark CTA band */}
+      <section className="bg-white pb-24 sm:pb-28">
         <div className={containerClassName}>
-          <div className="rounded-[32px] bg-slate-950 px-8 py-14 sm:px-12 sm:py-16 lg:flex lg:items-end lg:justify-between lg:px-16 lg:py-20">
+          <div
+            className="rounded-[36px] px-8 py-16 sm:px-12 sm:py-20 lg:flex lg:items-end lg:justify-between lg:px-16"
+            style={{ background: 'linear-gradient(135deg, #0F2459 0%, #071225 100%)' }}
+          >
             <div className="max-w-3xl">
               <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Cross-border operations require both strategic clarity and
@@ -262,7 +290,7 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              className="mt-10 h-12 rounded-full bg-white px-7 text-brand-ink hover:bg-brand-card lg:mt-0"
+              className="mt-10 h-12 rounded-full bg-white px-8 text-brand-ink hover:bg-slate-50 lg:mt-0"
             >
               <Link href="/sign-up">
                 Speak with us
