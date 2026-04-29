@@ -2,7 +2,7 @@ export default function DisclaimerPage() {
   return (
     <main className="bg-white">
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-wide text-[#0614b8]">
+        <p className="text-sm font-semibold uppercase tracking-wide text-brand-primary">
           Legal
         </p>
         <h1 className="mt-4 text-3xl font-semibold text-gray-950">

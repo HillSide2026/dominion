@@ -52,15 +52,19 @@
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
-  --color-brand-primary: #155EEF;
-  --color-brand-primary-hover: #0F4CD1;
+  --color-brand-primary: #004ADB;
+  --color-brand-primary-hover: #003AAD;
+  --color-brand-secondary: #0072CE;
   --color-brand-ink: #08111F;
   --color-brand-text: #64748b;
   --color-brand-muted: #f8fafc;
   --color-brand-card: #f1f5f9;
   --color-brand-border: #e2e8f0;
   --color-brand-navy: #071225;
-  --color-brand-accent: #EAF2FF;
+  --color-brand-navy-light: #102A6B;
+  --color-brand-navy-mid: #0F2459;
+  --color-brand-accent: #EAF1FF;
+  --color-brand-on-dark: #BFD4FF;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -96,7 +100,7 @@
     --card-foreground: 222.2 47.4% 11.2%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
-    --primary: 221.2 83.2% 53.3%;
+    --primary: 220 100% 43%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 98%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -108,7 +112,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 220 100% 43%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -181,7 +185,7 @@
   --card-foreground: hsl(222.2 47.4% 11.2%);
   --popover: hsl(0 0% 100%);
   --popover-foreground: hsl(222.2 47.4% 11.2%);
-  --primary: hsl(221.2 83.2% 53.3%);
+  --primary: hsl(220 100% 43%);
   --primary-foreground: hsl(0 0% 98%);
   --secondary: hsl(210 40% 98%);
   --secondary-foreground: hsl(222.2 47.4% 11.2%);
@@ -193,7 +197,7 @@
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(214.3 31.8% 91.4%);
   --input: hsl(214.3 31.8% 91.4%);
-  --ring: hsl(221.2 83.2% 53.3%);
+  --ring: hsl(220 100% 43%);
   --chart-1: hsl(12 76% 61%);
   --chart-2: hsl(173 58% 39%);
   --chart-3: hsl(197 37% 24%);

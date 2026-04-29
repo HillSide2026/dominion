@@ -149,7 +149,7 @@ function TeamAccess() {
             )}
             <Button
               type="submit"
-              className="bg-[#0614b8] text-white hover:bg-[#07108f]"
+              className="bg-brand-primary text-white hover:bg-brand-primary-hover"
               disabled={isInvitePending || !isOwner}
             >
               {isInvitePending ? (
@@ -191,7 +191,7 @@ export default function AccountPage() {
   return (
     <section className="flex-1 p-4 lg:p-8">
       <div className="mb-8 max-w-3xl">
-        <p className="text-sm font-semibold text-[#0614b8]">
+        <p className="text-sm font-semibold text-brand-primary">
           Member settings
         </p>
         <h1 className="mt-2 text-2xl font-semibold text-gray-950">Account</h1>
@@ -220,7 +220,7 @@ export default function AccountPage() {
               )}
               <Button
                 type="submit"
-                className="bg-[#0614b8] text-white hover:bg-[#07108f]"
+                className="bg-brand-primary text-white hover:bg-brand-primary-hover"
                 disabled={isAccountPending}
               >
                 {isAccountPending ? (
@@ -296,7 +296,7 @@ export default function AccountPage() {
               )}
               <Button
                 type="submit"
-                className="bg-[#0614b8] text-white hover:bg-[#07108f]"
+                className="bg-brand-primary text-white hover:bg-brand-primary-hover"
                 disabled={isPasswordPending}
               >
                 {isPasswordPending ? (

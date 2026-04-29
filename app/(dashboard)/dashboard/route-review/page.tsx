@@ -28,15 +28,15 @@ export default function RouteReviewPage() {
   return (
     <section className="flex-1 p-4 lg:p-8">
       <div className="mb-8 max-w-3xl">
-        <p className="text-sm font-semibold text-[#0614b8]">
+        <p className="text-sm font-semibold text-brand-primary">
           Protected workspace
         </p>
         <h1 className="mt-2 text-2xl font-semibold text-gray-950">
-          Route Review
+          Market Review
         </h1>
         <p className="mt-3 text-sm leading-6 text-gray-600">
-          Use this workspace to prepare route context before a client question
-          moves into deeper professional review.
+          Use this workspace to prepare export market context before a client
+          question moves into deeper professional review.
         </p>
       </div>
 
@@ -44,7 +44,7 @@ export default function RouteReviewPage() {
         {stages.map((stage) => (
           <Card key={stage.title}>
             <CardHeader>
-              <div className="flex h-10 w-10 items-center justify-center bg-[#0614b8] text-white">
+              <div className="flex h-10 w-10 items-center justify-center bg-brand-primary text-white">
                 <stage.icon className="h-5 w-5" />
               </div>
               <CardTitle>{stage.title}</CardTitle>
@@ -58,7 +58,7 @@ export default function RouteReviewPage() {
 
       <Card className="mt-6">
         <CardHeader>
-          <CardTitle>Route review brief</CardTitle>
+          <CardTitle>Market review brief</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 md:grid-cols-2">
@@ -71,7 +71,7 @@ export default function RouteReviewPage() {
               'Questions assigned to specialist review'
             ].map((item) => (
               <div key={item} className="flex gap-3 border border-gray-200 p-4">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#0584c7]" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-secondary" />
                 <p className="text-sm leading-6 text-gray-700">{item}</p>
               </div>
             ))}

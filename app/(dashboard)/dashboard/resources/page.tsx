@@ -32,7 +32,7 @@ export default function ResourcesPage() {
   return (
     <section className="flex-1 p-4 lg:p-8">
       <div className="mb-8 max-w-3xl">
-        <p className="text-sm font-semibold text-[#0614b8]">
+        <p className="text-sm font-semibold text-brand-primary">
           Member resources
         </p>
         <h1 className="mt-2 text-2xl font-semibold text-gray-950">
@@ -48,7 +48,7 @@ export default function ResourcesPage() {
         {resources.map((resource) => (
           <Card key={resource.title}>
             <CardHeader>
-              <div className="flex h-10 w-10 items-center justify-center bg-[#0614b8] text-white">
+              <div className="flex h-10 w-10 items-center justify-center bg-brand-primary text-white">
                 <FileText className="h-5 w-5" />
               </div>
               <CardTitle>{resource.title}</CardTitle>
@@ -59,7 +59,7 @@ export default function ResourcesPage() {
               </p>
               <Button
                 asChild
-                className="mt-6 bg-[#0614b8] text-white hover:bg-[#07108f]"
+                className="mt-6 bg-brand-primary text-white hover:bg-brand-primary-hover"
               >
                 <a href={resource.href} download>
                   <Download className="h-4 w-4" />

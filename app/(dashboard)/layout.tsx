@@ -13,7 +13,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { FlowSignalLogo } from '@/components/brand/flowsignal-logo';
 import { signOut } from '@/app/(login)/actions';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { User } from '@/lib/db/schema';
 import useSWR, { mutate } from 'swr';
 
@@ -74,10 +74,14 @@ function UserMenu() {
   );
 }
 
-function Header() {
+function Header({ isPortal }: { isPortal: boolean }) {
   return (
     <header className="border-b border-brand-border bg-white">
-      <div className="mx-auto flex max-w-content items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <div
+        className={`flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8 ${
+          isPortal ? 'w-full' : 'mx-auto max-w-content'
+        }`}
+      >
         <FlowSignalLogo />
         <Suspense fallback={<div className="h-9 w-16" />}>
           <UserMenu />
@@ -89,7 +93,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer style={{ background: '#071225' }}>
+    <footer className="bg-brand-navy">
       <div className="mx-auto max-w-content px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -97,7 +101,7 @@ function Footer() {
               Dominion Partners
             </p>
             <p className="mt-2 text-sm text-slate-500">
-              Cross-border trade and payment infrastructure
+              Cross-border trade and payments advisory
             </p>
           </div>
           <div>
@@ -122,6 +126,12 @@ function Footer() {
                 className="text-sm text-slate-500 transition-colors hover:text-white"
               >
                 How We Work
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Contact
               </Link>
             </nav>
           </div>
@@ -175,11 +185,14 @@ function Footer() {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isPortal = pathname.startsWith('/dashboard');
+
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header isPortal={isPortal} />
       <div className="flex-1">{children}</div>
-      <Footer />
+      {!isPortal && <Footer />}
     </div>
   );
 }

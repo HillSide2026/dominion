@@ -77,7 +77,10 @@ export default function HomePage() {
       {/* Hero */}
       <section
         className="relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #102A6B 0%, #071225 100%)' }}
+        style={{
+          background:
+            'linear-gradient(135deg, var(--color-brand-navy-light) 0%, var(--color-brand-navy) 100%)'
+        }}
       >
         <div
           className="pointer-events-none absolute inset-0"
@@ -88,11 +91,11 @@ export default function HomePage() {
         />
         <div className={`${containerClassName} relative py-24 sm:py-32 lg:py-36`}>
           <div className="max-w-[780px]">
-            <p className="text-sm font-semibold uppercase tracking-eyebrow text-blue-300">
+            <p className="text-sm font-semibold uppercase tracking-eyebrow text-brand-on-dark">
               Cross-Border Advisory
             </p>
             <h1 className="mt-6 text-5xl font-semibold tracking-tight leading-[1.06] text-white sm:text-6xl lg:text-[4.5rem]">
-              Cross-Border Trade and Payment Infrastructure
+              Cross-Border Trade and Payments Advisory
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
               We advise, structure, and optimize international trade and the
@@ -102,7 +105,7 @@ export default function HomePage() {
               <Button
                 asChild
                 size="lg"
-                className="h-12 rounded-full bg-[#155EEF] px-7 text-white shadow-none hover:bg-[#0F4CD1]"
+                className="h-12 rounded-full bg-brand-primary px-7 text-white shadow-none hover:bg-brand-primary-hover"
               >
                 <Link href="/sign-in">
                   Access Client Portal
@@ -114,7 +117,7 @@ export default function HomePage() {
                 size="lg"
                 className="h-12 rounded-full border border-white/20 bg-transparent px-7 text-white shadow-none hover:bg-white/10"
               >
-                <Link href="#services">View our Services</Link>
+                <Link href="/contact">Start an Export Intake</Link>
               </Button>
             </div>
             <p className="mt-8 text-sm text-slate-400">
@@ -152,7 +155,7 @@ export default function HomePage() {
                 className="group flex min-h-[280px] flex-col rounded-2xl border border-brand-border bg-gray-50 p-8 shadow-sm transition hover:shadow-md sm:p-10"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF2FF] text-[#155EEF]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
                     <capability.icon className="h-5 w-5" />
                   </div>
                   <span className="text-sm font-semibold uppercase tracking-eyebrow text-brand-text">
@@ -165,7 +168,7 @@ export default function HomePage() {
                 <p className="mt-5 max-w-lg text-lg leading-8 text-brand-text">
                   {capability.description}
                 </p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-10 text-sm font-semibold text-[#155EEF]">
+                <span className="mt-auto inline-flex items-center gap-2 pt-10 text-sm font-semibold text-brand-primary">
                   Learn more
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
@@ -195,7 +198,7 @@ export default function HomePage() {
                     key={point}
                     className="flex gap-4 py-5 first:pt-0 last:pb-0"
                   >
-                    <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#EAF2FF] text-[#155EEF]">
+                    <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
                       <CheckCircle2 className="h-4 w-4" />
                     </div>
                     <p className="text-base font-medium leading-7 text-brand-ink sm:text-lg">
@@ -255,10 +258,10 @@ export default function HomePage() {
                   key={step.title}
                   className="relative transition-transform duration-200 hover:-translate-y-0.5"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-brand-border bg-white text-sm font-semibold text-[#155EEF] shadow-sm">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-brand-border bg-white text-sm font-semibold text-brand-primary shadow-sm">
                     {String(index + 1).padStart(2, '0')}
                   </div>
-                  <h3 className="mt-8 text-2xl font-semibold text-[#08111F]">
+                  <h3 className="mt-8 text-2xl font-semibold text-brand-ink">
                     {step.title}
                   </h3>
                   <p className="mt-4 max-w-xs text-lg leading-8 text-slate-500">
@@ -276,7 +279,10 @@ export default function HomePage() {
         <div className={containerClassName}>
           <div
             className="rounded-[36px] px-8 py-16 sm:px-12 sm:py-20 lg:flex lg:items-end lg:justify-between lg:px-16"
-            style={{ background: 'linear-gradient(135deg, #0F2459 0%, #071225 100%)' }}
+            style={{
+              background:
+                'linear-gradient(135deg, var(--color-brand-navy-mid) 0%, var(--color-brand-navy) 100%)'
+            }}
           >
             <div className="max-w-3xl">
               <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">

@@ -57,7 +57,7 @@ export default function InsightsPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#0614b8]">Insights</p>
+            <p className="text-sm font-semibold text-brand-primary">Insights</p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-gray-950 sm:text-5xl">
               Notes on cross-border transaction review and advisory preparation.
             </h1>
@@ -90,7 +90,7 @@ export default function InsightsPage() {
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
           {insights.map((insight) => (
             <article key={insight.title} className="bg-white p-6 shadow-sm">
-              <p className="text-xs font-semibold uppercase text-[#0614b8]">
+              <p className="text-xs font-semibold uppercase text-brand-primary">
                 {insight.category}
               </p>
               <h2 className="mt-4 text-xl font-semibold leading-7 text-gray-950">
@@ -108,7 +108,7 @@ export default function InsightsPage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
           <div>
-            <p className="text-sm font-semibold text-[#0614b8]">
+            <p className="text-sm font-semibold text-brand-primary">
               About these notes
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-gray-950">
@@ -122,7 +122,7 @@ export default function InsightsPage() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-[#0614b8]">
+            <p className="text-sm font-semibold text-brand-primary">
               Member resources
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-gray-950">
@@ -135,7 +135,7 @@ export default function InsightsPage() {
             </p>
             <Button
               asChild
-              className="mt-6 bg-[#0614b8] text-white hover:bg-[#07108f]"
+              className="mt-6 bg-brand-primary text-white hover:bg-brand-primary-hover"
             >
               <Link href="/sign-in">
                 Login

@@ -491,6 +491,10 @@ export const inviteTeamMember = validatedActionWithUser(
       return { error: 'User is not part of a team' };
     }
 
+    if (user.role !== 'owner') {
+      return { error: 'Workspace invitations are limited to owners.' };
+    }
+
     if (!isAllowedSignupEmail(normalizedEmail)) {
       return { error: getSignupDomainErrorMessage() };
     }

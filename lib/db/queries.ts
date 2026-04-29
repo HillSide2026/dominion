@@ -1,6 +1,15 @@
 import { desc, and, eq, isNull } from 'drizzle-orm';
 import { getDb } from './drizzle';
-import { activityLogs, teamMembers, users } from './schema';
+import {
+  activityLogs,
+  cases,
+  diagnosticAssessments,
+  deliverables,
+  followUps,
+  marketReviews,
+  teamMembers,
+  users
+} from './schema';
 import { cookies } from 'next/headers';
 import { verifyToken } from '@/lib/auth/session';
 
@@ -116,4 +125,86 @@ export async function getTeamForUser() {
   });
 
   return result?.team || null;
+}
+
+export async function getCasesForCurrentTeam() {
+  const team = await getTeamForUser();
+  if (!team) {
+    return [];
+  }
+
+  const db = getDb();
+  return db
+    .select()
+    .from(cases)
+    .where(eq(cases.teamId, team.id))
+    .orderBy(desc(cases.updatedAt));
+}
+
+export async function getCaseForCurrentTeam(caseId: number) {
+  const team = await getTeamForUser();
+  if (!team) {
+    return null;
+  }
+
+  const db = getDb();
+  const [caseRecord] = await db
+    .select()
+    .from(cases)
+    .where(and(eq(cases.id, caseId), eq(cases.teamId, team.id)))
+    .limit(1);
+
+  if (!caseRecord) {
+    return null;
+  }
+
+  const [latestDiagnostic] = await db
+    .select()
+    .from(diagnosticAssessments)
+    .where(eq(diagnosticAssessments.caseId, caseRecord.id))
+    .orderBy(desc(diagnosticAssessments.createdAt))
+    .limit(1);
+
+  const [marketReview] = await db
+    .select()
+    .from(marketReviews)
+    .where(eq(marketReviews.caseId, caseRecord.id))
+    .orderBy(desc(marketReviews.updatedAt))
+    .limit(1);
+
+  const [latestDeliverable] = await db
+    .select()
+    .from(deliverables)
+    .where(eq(deliverables.caseId, caseRecord.id))
+    .orderBy(desc(deliverables.updatedAt))
+    .limit(1);
+
+  const caseFollowUps = await db
+    .select()
+    .from(followUps)
+    .where(eq(followUps.caseId, caseRecord.id))
+    .orderBy(desc(followUps.createdAt));
+
+  const caseActivity = await db
+    .select({
+      id: activityLogs.id,
+      action: activityLogs.action,
+      timestamp: activityLogs.timestamp,
+      userName: users.name,
+      userEmail: users.email
+    })
+    .from(activityLogs)
+    .leftJoin(users, eq(activityLogs.userId, users.id))
+    .where(eq(activityLogs.caseId, caseRecord.id))
+    .orderBy(desc(activityLogs.timestamp))
+    .limit(12);
+
+  return {
+    case: caseRecord,
+    latestDiagnostic: latestDiagnostic || null,
+    marketReview: marketReview || null,
+    latestDeliverable: latestDeliverable || null,
+    followUps: caseFollowUps,
+    activity: caseActivity
+  };
 }

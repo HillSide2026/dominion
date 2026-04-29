@@ -75,7 +75,7 @@ export function ServicePageSection({
 
 export function ServicePageCta({
   description,
-  href = '/sign-up'
+  href = '/contact'
 }: ServicePageCtaProps) {
   return (
     <ServicePageSection contentClassName="pt-8 pb-24 sm:pb-28 lg:pb-32">

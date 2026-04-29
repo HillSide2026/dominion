@@ -46,7 +46,7 @@ export default function ForAccountantsPage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.8fr] lg:px-8 lg:py-20">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#0614b8]">
+            <p className="text-sm font-semibold text-brand-primary">
               For accountants
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-gray-950 sm:text-5xl">
@@ -61,7 +61,7 @@ export default function ForAccountantsPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-[#0614b8] text-white hover:bg-[#07108f]"
+                className="bg-brand-primary text-white hover:bg-brand-primary-hover"
               >
                 <Link href="/sign-in">
                   Open member workspace
@@ -86,7 +86,7 @@ export default function ForAccountantsPage() {
                 'Maintain records across engagements'
               ].map((step, index) => (
                 <div key={step} className="flex gap-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-[#0584c7] text-sm font-semibold text-white">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center bg-brand-secondary text-sm font-semibold text-white">
                     {index + 1}
                   </span>
                   <p className="pt-1 text-sm font-medium text-gray-800">
@@ -104,7 +104,7 @@ export default function ForAccountantsPage() {
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
           {useCases.map((useCase) => (
             <article key={useCase.title} className="bg-white p-6 shadow-sm">
-              <div className="flex h-11 w-11 items-center justify-center bg-[#0614b8] text-white">
+              <div className="flex h-11 w-11 items-center justify-center bg-brand-primary text-white">
                 <useCase.icon className="h-5 w-5" />
               </div>
               <h2 className="mt-5 text-lg font-semibold text-gray-950">
@@ -122,7 +122,7 @@ export default function ForAccountantsPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold text-[#0614b8]">
+            <p className="text-sm font-semibold text-brand-primary">
               Common situations
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-gray-950">
@@ -141,7 +141,7 @@ export default function ForAccountantsPage() {
                 className="border border-gray-200 p-6"
               >
                 <div className="flex items-start gap-3">
-                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#0584c7]" />
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-brand-secondary" />
                   <div>
                     <h3 className="text-base font-semibold text-gray-950">
                       {scenario.title}
@@ -161,7 +161,7 @@ export default function ForAccountantsPage() {
       <section className="border-y border-gray-200 bg-gray-50">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
           <div>
-            <div className="flex h-10 w-10 items-center justify-center bg-[#0614b8] text-white">
+            <div className="flex h-10 w-10 items-center justify-center bg-brand-primary text-white">
               <Scale className="h-5 w-5" />
             </div>
             <h2 className="mt-5 text-3xl font-semibold text-gray-950">
@@ -174,7 +174,7 @@ export default function ForAccountantsPage() {
             </p>
           </div>
           <div>
-            <div className="flex h-10 w-10 items-center justify-center bg-[#0614b8] text-white">
+            <div className="flex h-10 w-10 items-center justify-center bg-brand-primary text-white">
               <BookOpen className="h-5 w-5" />
             </div>
             <h2 className="mt-5 text-3xl font-semibold text-gray-950">
@@ -187,7 +187,7 @@ export default function ForAccountantsPage() {
             </p>
             <Button
               asChild
-              className="mt-6 bg-[#0614b8] text-white hover:bg-[#07108f]"
+              className="mt-6 bg-brand-primary text-white hover:bg-brand-primary-hover"
             >
               <Link href="/sign-in">
                 Access resources

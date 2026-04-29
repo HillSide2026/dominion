@@ -50,7 +50,7 @@ export default function IntelligencePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#0614b8]">
+            <p className="text-sm font-semibold text-brand-primary">
               Advisory model
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-gray-950 sm:text-5xl">
@@ -70,7 +70,7 @@ export default function IntelligencePage() {
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-14 sm:px-6 lg:grid-cols-3 lg:px-8">
           {pillars.map((pillar) => (
             <article key={pillar.title} className="bg-white p-6 shadow-sm">
-              <div className="flex h-11 w-11 items-center justify-center bg-[#0614b8] text-white">
+              <div className="flex h-11 w-11 items-center justify-center bg-brand-primary text-white">
                 <pillar.icon className="h-5 w-5" />
               </div>
               <h2 className="mt-5 text-lg font-semibold text-gray-950">
@@ -118,7 +118,7 @@ export default function IntelligencePage() {
       <section className="border-y border-gray-200 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold text-[#0614b8]">
+            <p className="text-sm font-semibold text-brand-primary">
               Coverage
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-gray-950">
@@ -133,7 +133,7 @@ export default function IntelligencePage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {disciplines.map((d) => (
               <article key={d.title} className="bg-white p-6 shadow-sm">
-                <div className="flex h-10 w-10 items-center justify-center bg-[#0614b8] text-white">
+                <div className="flex h-10 w-10 items-center justify-center bg-brand-primary text-white">
                   <d.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-5 text-base font-semibold text-gray-950">
@@ -150,7 +150,7 @@ export default function IntelligencePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold text-[#0614b8]">
+            <p className="text-sm font-semibold text-brand-primary">
               Methodology
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-gray-950">
@@ -170,7 +170,7 @@ export default function IntelligencePage() {
                 'Produce consistent records across engagements.',
                 'Reduce rework at the handoff between advisory and specialist teams.'
               ].map((item) => (
-                <div key={item} className="border-l-2 border-[#0584c7] pl-4">
+                <div key={item} className="border-l-2 border-brand-secondary pl-4">
                   <p className="text-sm leading-6 text-gray-700">{item}</p>
                 </div>
               ))}
