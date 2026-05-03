@@ -27,7 +27,7 @@ All color values live in `app/globals.css` inside `@theme`. Pages and components
 | `brand-navy` | `#071225` | Darkest navy — gradient start (left), footer |
 | `brand-navy-light` | `#102A6B` | Mid navy |
 | `brand-navy-mid` | `#0F2459` | Mid navy |
-| `brand-navy-end` | `#1A4596` | Gradient end (right) — lighter navy/blue for hero and CTA band |
+| `brand-navy-end` | `#133070` | Gradient end (right) — subtly lighter navy for hero and CTA band |
 
 ### Usage Rules
 
