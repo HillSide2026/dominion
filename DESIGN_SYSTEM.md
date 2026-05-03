@@ -24,9 +24,10 @@ All color values live in `app/globals.css` inside `@theme`. Pages and components
 | `brand-card` | `#f1f5f9` | Card surface fill |
 | `brand-accent` | `#EAF1FF` | Pale blue — icon wells, badges, subtle emphasis |
 | `brand-on-dark` | `#BFD4FF` | Light blue text on navy surfaces |
-| `brand-navy` | `#071225` | Darkest navy — footer, dark sections |
-| `brand-navy-light` | `#102A6B` | Hero gradient start |
-| `brand-navy-mid` | `#0F2459` | CTA band gradient start |
+| `brand-navy` | `#071225` | Darkest navy — gradient start (left), footer |
+| `brand-navy-light` | `#102A6B` | Mid navy |
+| `brand-navy-mid` | `#0F2459` | Mid navy |
+| `brand-navy-end` | `#1A4596` | Gradient end (right) — lighter navy/blue for hero and CTA band |
 
 ### Usage Rules
 
@@ -153,11 +154,13 @@ h-12 rounded-full bg-white px-8 text-brand-ink hover:bg-slate-50
 
 ## Hero
 
-The hero uses a dark navy gradient with a radial highlight:
+The hero uses a horizontal dark → lighter navy gradient (left to right):
 
 ```tsx
-style={{ background: 'linear-gradient(135deg, var(--color-brand-navy-light) 0%, var(--color-brand-navy) 100%)' }}
+style={{ background: 'linear-gradient(to right, var(--color-brand-navy) 0%, var(--color-brand-navy-end) 100%)' }}
 ```
+
+Direction rule: always `to right`. The **left/start is the darkest navy** (`brand-navy`); the **right/end is the lighter navy** (`brand-navy-end`). This preserves white text readability at both ends while adding visible depth across the width.
 
 Radial overlay (low opacity, adds subtle depth):
 ```tsx
@@ -172,8 +175,10 @@ Max content width in hero: `max-w-[780px]`.
 
 ```tsx
 className="rounded-[36px] px-8 py-16 sm:px-12 sm:py-20 lg:flex lg:items-end lg:justify-between lg:px-16"
-style={{ background: 'linear-gradient(135deg, var(--color-brand-navy-mid) 0%, var(--color-brand-navy) 100%)' }}
+style={{ background: 'linear-gradient(to right, var(--color-brand-navy) 0%, var(--color-brand-navy-end) 100%)' }}
 ```
+
+Uses the same `to right` direction and color stops as the hero for visual consistency.
 
 ---
 

@@ -79,7 +79,7 @@ export default function HomePage() {
         className="relative overflow-hidden"
         style={{
           background:
-            'linear-gradient(135deg, var(--color-brand-navy-light) 0%, var(--color-brand-navy) 100%)'
+            'linear-gradient(to right, var(--color-brand-navy) 0%, var(--color-brand-navy-end) 100%)'
         }}
       >
         <div
@@ -279,7 +279,7 @@ export default function HomePage() {
             className="rounded-[36px] px-8 py-16 sm:px-12 sm:py-20 lg:flex lg:items-end lg:justify-between lg:px-16"
             style={{
               background:
-                'linear-gradient(135deg, var(--color-brand-navy-mid) 0%, var(--color-brand-navy) 100%)'
+                'linear-gradient(to right, var(--color-brand-navy) 0%, var(--color-brand-navy-end) 100%)'
             }}
           >
             <div className="max-w-3xl">
