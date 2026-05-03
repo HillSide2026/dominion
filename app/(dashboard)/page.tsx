@@ -152,23 +152,23 @@ export default function HomePage() {
               <Link
                 key={capability.title}
                 href={capability.href}
-                className="group flex min-h-[280px] flex-col rounded-2xl border border-brand-border bg-gray-50 p-8 shadow-sm transition hover:shadow-md sm:p-10"
+                className="group flex min-h-[280px] flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:shadow-md sm:p-10"
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
-                    <capability.icon className="h-5 w-5" />
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-accent text-brand-primary">
+                    <capability.icon className="h-6 w-6" />
                   </div>
-                  <span className="text-sm font-semibold uppercase tracking-eyebrow text-brand-text">
+                  <span className="text-xs font-semibold uppercase tracking-eyebrow text-brand-text">
                     {capability.label}
                   </span>
                 </div>
-                <h3 className="mt-10 text-3xl font-semibold tracking-tight text-brand-ink">
+                <h3 className="mt-8 text-2xl font-semibold tracking-tight text-brand-ink lg:text-3xl">
                   {capability.title}
                 </h3>
-                <p className="mt-5 max-w-lg text-lg leading-8 text-brand-text">
+                <p className="mt-4 max-w-lg text-base leading-7 text-brand-text lg:text-lg">
                   {capability.description}
                 </p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-10 text-sm font-semibold text-brand-primary">
+                <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-semibold text-brand-primary">
                   Learn more
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
@@ -179,7 +179,7 @@ export default function HomePage() {
       </section>
 
       {/* Built for Cross-Border Complexity */}
-      <section className="bg-white">
+      <section className="bg-slate-50">
         <div className={`${containerClassName} py-24 sm:py-28`}>
           <div className="grid gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
             <div className="max-w-xl">
@@ -191,7 +191,7 @@ export default function HomePage() {
                 counterparties, currencies, and operational systems.
               </p>
             </div>
-            <div className="rounded-2xl bg-gray-50 p-10 shadow-sm">
+            <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm">
               <div className="divide-y divide-brand-border">
                 {complexityPoints.map((point) => (
                   <div
@@ -213,7 +213,7 @@ export default function HomePage() {
       </section>
 
       {/* Who We Serve */}
-      <section className="bg-gray-50">
+      <section className="bg-white">
         <div className={`${containerClassName} py-24 sm:py-28`}>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
@@ -224,16 +224,17 @@ export default function HomePage() {
               financial activity.
             </p>
           </div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {audiences.map((audience) => (
               <article
                 key={audience.title}
-                className="rounded-2xl bg-white p-8 shadow-sm transition hover:shadow-md sm:p-10"
+                className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition hover:shadow-md sm:p-10"
               >
-                <h3 className="text-xl font-semibold text-brand-ink">
+                <div className="mb-5 h-[2px] w-8 rounded-full bg-brand-primary/30" />
+                <h3 className="text-xl font-semibold tracking-tight text-brand-ink">
                   {audience.title}
                 </h3>
-                <p className="mt-4 max-w-md text-base leading-7 text-brand-text">
+                <p className="mt-3 text-base leading-7 text-brand-text">
                   {audience.description}
                 </p>
               </article>
@@ -243,33 +244,30 @@ export default function HomePage() {
       </section>
 
       {/* How We Work */}
-      <section id="how-we-work" className="bg-white">
+      <section id="how-we-work" className="bg-slate-50">
         <div className={`${containerClassName} py-24 sm:py-28`}>
           <div className="max-w-3xl">
             <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
               How We Work
             </h2>
           </div>
-          <div className="relative mt-14">
-            <div className="absolute left-[10%] right-[10%] top-7 hidden h-px bg-gray-200 lg:block" />
-            <div className="grid gap-12 lg:grid-cols-3 lg:gap-10">
-              {processSteps.map((step, index) => (
-                <div
-                  key={step.title}
-                  className="relative transition-transform duration-200 hover:-translate-y-0.5"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-brand-border bg-white text-sm font-semibold text-brand-primary shadow-sm">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
-                  <h3 className="mt-8 text-2xl font-semibold text-brand-ink">
-                    {step.title}
-                  </h3>
-                  <p className="mt-4 max-w-xs text-lg leading-8 text-slate-500">
-                    {step.description}
-                  </p>
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {processSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:p-10"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-accent text-sm font-bold text-brand-primary">
+                  {index + 1}
                 </div>
-              ))}
-            </div>
+                <h3 className="mt-6 text-xl font-semibold tracking-tight text-brand-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-brand-text">
+                  {step.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
