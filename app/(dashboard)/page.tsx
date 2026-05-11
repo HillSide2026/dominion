@@ -3,24 +3,33 @@ import {
   ArrowRight,
   CheckCircle2,
   Globe2,
-  Landmark
+  Landmark,
+  Scale
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const capabilities = [
   {
-    label: 'Trade',
-    title: 'Trade Advisory',
+    label: 'MARKET ACCESS',
+    title: 'Trade & Market Advisory',
     description:
-      'Market entry, trade structuring, and cross-border operational strategy.',
+      'Supporting global leaders with market entry, trade strategy, regulatory navigation, and cross-border planning for international expansion.',
     icon: Globe2,
     href: '/trade-advisory'
   },
   {
-    label: 'Payments',
-    title: 'Payment Services',
+    label: 'TRADE DEFENCE',
+    title: 'Cross-Border Payment Services',
     description:
-      'Cross-border payments, FX optimization, and financial flow structuring for international businesses.',
+      'Advising organizations on tariffs, trade barriers, customs issues, compliance matters, and regulatory challenges affecting international operations.',
+    icon: Scale,
+    href: '/trade-advisory'
+  },
+  {
+    label: 'TREASURY SERVICES',
+    title: 'Cross-Border Financial Advisory',
+    description:
+      'Cross-border payments, FX optimization, and financial infrastructure support for international operations.',
     icon: Landmark,
     href: '/payment-services'
   }
@@ -95,11 +104,11 @@ export default function HomePage() {
               Cross-Border Advisory
             </p>
             <h1 className="mt-6 text-5xl font-semibold tracking-tight leading-[1.06] text-white sm:text-6xl lg:text-[4.5rem]">
-              Cross-Border Trade and Payments Advisory
+              Global Trade Advisory for Sustainable Development
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              We advise, structure, and optimize international trade and the
-              movement of money behind it.
+              We advise, represent, and support organizations operating across
+              borders to achieve market access and remove trade barriers.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button
@@ -108,7 +117,7 @@ export default function HomePage() {
                 className="h-12 rounded-full bg-brand-primary px-7 text-white shadow-none hover:bg-brand-primary-hover"
               >
                 <Link href="/sign-in">
-                  Access Client Portal
+                  Client Portal
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
@@ -117,12 +126,9 @@ export default function HomePage() {
                 size="lg"
                 className="h-12 rounded-full border border-white/20 bg-transparent px-7 text-white shadow-none hover:bg-white/10"
               >
-                <Link href="/contact">Start an Export Intake</Link>
+                <Link href="#services">Discover Services</Link>
               </Button>
             </div>
-            <p className="mt-8 text-sm text-slate-400">
-              Trusted across jurisdictions, currencies, and counterparties
-            </p>
           </div>
         </div>
       </section>
@@ -132,13 +138,12 @@ export default function HomePage() {
         <div className={`${containerClassName} py-28 sm:py-32`}>
           <div className="max-w-3xl">
             <h2 className="text-4xl font-semibold tracking-tight text-brand-ink sm:text-5xl">
-              Two Integrated Capabilities
+              Strategic, Interdisciplinary Trade Services
             </h2>
             <p className="mt-6 text-lg leading-8 text-brand-text">
-              Dominion Partners operates at the intersection of global trade
-              and financial infrastructure. We support clients in structuring
-              cross-border activity and ensuring the underlying movement of
-              funds is efficient, compliant, and cost-effective.
+              We help Canadian and international clients navigate the complexity
+              of trade, supply chains, and treasury — combining legal,
+              compliance, and commercial expertise.
             </p>
           </div>
         </div>
@@ -147,7 +152,7 @@ export default function HomePage() {
       {/* Capability cards */}
       <section id="services" className="bg-white">
         <div className={`${containerClassName} pb-28 sm:pb-32`}>
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+          <div className="grid gap-6 lg:grid-cols-3 lg:gap-8">
             {capabilities.map((capability) => (
               <Link
                 key={capability.title}
@@ -169,7 +174,7 @@ export default function HomePage() {
                   {capability.description}
                 </p>
                 <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-semibold text-brand-primary">
-                  Learn more
+                  Explore Services
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>
