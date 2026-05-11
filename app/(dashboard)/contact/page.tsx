@@ -23,24 +23,23 @@ export default function ContactPage() {
 
   return (
     <main className="bg-white">
-      <section className="mx-auto grid max-w-content gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8 lg:py-28">
+      <section className="mx-auto grid max-w-content gap-16 px-4 py-20 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8 lg:py-28">
         <div>
           <p className="text-sm font-semibold uppercase tracking-eyebrow text-brand-primary">
-            Export Intake
+            General Inquiries
           </p>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-brand-ink sm:text-5xl">
-            Help Canadian product businesses export with confidence.
+            Strategic Advisory for International Business
           </h1>
           <p className="mt-6 text-lg leading-8 text-brand-text">
-            Tell us what you sell, where you want to go, and what is blocking
-            the next step. Dominion will turn the intake into a structured
-            advisory review.
+            We support organizations operating across borders through
+            integrated trade and strategic advisory services.
           </p>
-          <div className="mt-8 space-y-4 text-sm leading-6 text-brand-text">
+          <div className="mt-10 space-y-5 text-sm leading-6 text-brand-text">
             {[
-              'Lead capture becomes a structured intake.',
-              'Qualified opportunities can become cases.',
-              'Cases move into diagnostics, market review, and deliverables.'
+              'Advisory support across trade, treasury, and regulatory matters',
+              'Strategic guidance for organizations operating internationally',
+              'Collaboration through a global network of professional relationships'
             ].map((item) => (
               <div key={item} className="flex gap-3">
                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" />
@@ -50,17 +49,17 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="rounded-lg border border-brand-border bg-white p-6 shadow-soft sm:p-8">
+        <div className="rounded-2xl border border-brand-border bg-white p-8 shadow-soft sm:p-10">
           {state.success ? (
-            <div className="space-y-5">
+            <div className="space-y-6">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
               <div>
                 <h2 className="text-2xl font-semibold text-brand-ink">
-                  Intake received
+                  Message received
                 </h2>
-                <p className="mt-3 text-sm leading-6 text-brand-text">
+                <p className="mt-3 text-base leading-7 text-brand-text">
                   {state.success}
                 </p>
               </div>
@@ -72,12 +71,24 @@ export default function ContactPage() {
               </Button>
             </div>
           ) : (
-            <form action={action} className="space-y-5">
-              <div className="grid gap-5 sm:grid-cols-2">
+            <form action={action} className="space-y-7">
+              <div className="grid gap-6 sm:grid-cols-2">
                 <div className={fieldClassName}>
                   <Label htmlFor="name">Name</Label>
                   <Input id="name" name="name" defaultValue={values.name} required />
                 </div>
+                <div className={fieldClassName}>
+                  <Label htmlFor="company">Organization</Label>
+                  <Input
+                    id="company"
+                    name="company"
+                    defaultValue={values.company}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid gap-6 sm:grid-cols-2">
                 <div className={fieldClassName}>
                   <Label htmlFor="email">Email</Label>
                   <Input
@@ -88,89 +99,26 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
                 <div className={fieldClassName}>
-                  <Label htmlFor="company">Company</Label>
+                  <Label htmlFor="phone">Phone</Label>
                   <Input
-                    id="company"
-                    name="company"
-                    defaultValue={values.company}
-                    required
-                  />
-                </div>
-                <div className={fieldClassName}>
-                  <Label htmlFor="website">Website</Label>
-                  <Input
-                    id="website"
-                    name="website"
-                    type="url"
-                    defaultValue={values.website}
-                    placeholder="https://"
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    defaultValue={values.phone}
                   />
                 </div>
               </div>
 
               <div className={fieldClassName}>
-                <Label htmlFor="product">What product are you exporting?</Label>
-                <Textarea
-                  id="product"
-                  name="product"
-                  defaultValue={values.product}
-                  required
-                />
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div className={fieldClassName}>
-                  <Label htmlFor="targetMarket">Target market</Label>
-                  <Input
-                    id="targetMarket"
-                    name="targetMarket"
-                    defaultValue={values.targetMarket}
-                    required
-                  />
-                </div>
-                <div className={fieldClassName}>
-                  <Label htmlFor="currentStage">Current export stage</Label>
-                  <Input
-                    id="currentStage"
-                    name="currentStage"
-                    defaultValue={values.currentStage}
-                    placeholder="Exploring, quoting, shipping..."
-                  />
-                </div>
-              </div>
-
-              <div className={fieldClassName}>
-                <Label htmlFor="challenge">What do you need help with?</Label>
+                <Label htmlFor="challenge">How can we support your team?</Label>
                 <Textarea
                   id="challenge"
                   name="challenge"
                   defaultValue={values.challenge}
+                  rows={4}
                   required
                 />
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div className={fieldClassName}>
-                  <Label htmlFor="timeline">Timeline</Label>
-                  <Input
-                    id="timeline"
-                    name="timeline"
-                    defaultValue={values.timeline}
-                    placeholder="This month, this quarter..."
-                  />
-                </div>
-                <div className={fieldClassName}>
-                  <Label htmlFor="message">Other notes</Label>
-                  <Input
-                    id="message"
-                    name="message"
-                    defaultValue={values.message}
-                  />
-                </div>
               </div>
 
               {state.error && (
@@ -179,7 +127,7 @@ export default function ContactPage() {
 
               <Button
                 type="submit"
-                className="bg-brand-primary text-white hover:bg-brand-primary-hover"
+                className="h-12 rounded-full bg-brand-primary px-7 text-white hover:bg-brand-primary-hover"
                 disabled={pending}
               >
                 {pending ? (
@@ -189,7 +137,7 @@ export default function ContactPage() {
                   </>
                 ) : (
                   <>
-                    Submit intake
+                    Begin Conversation
                     <ArrowRight className="h-4 w-4" />
                   </>
                 )}

@@ -11,17 +11,12 @@ export type ContactIntakeState = {
   values?: Record<string, string>;
 };
 
-const contactIntakeSchema = z.object({
+const contactSchema = z.object({
   name: z.string().min(2, 'Name is required').max(100),
-  email: z.string().email('Enter a valid email').max(255),
-  company: z.string().min(2, 'Company is required').max(150),
-  website: z.string().max(255).optional(),
-  product: z.string().min(2, 'Tell us what you export').max(1000),
-  targetMarket: z.string().min(2, 'Target market is required').max(150),
-  currentStage: z.string().max(100).optional(),
-  challenge: z.string().min(10, 'Share the export challenge in a little more detail').max(2000),
-  timeline: z.string().max(100).optional(),
-  message: z.string().max(2000).optional()
+  company: z.string().min(2, 'Organization name is required').max(150),
+  email: z.string().email('Enter a valid email address').max(255),
+  phone: z.string().max(50).optional(),
+  challenge: z.string().min(5, 'Please describe how we can support your team').max(2000)
 });
 
 function formValues(formData: FormData) {
@@ -38,7 +33,7 @@ export async function submitContactIntake(
   formData: FormData
 ): Promise<ContactIntakeState> {
   const values = formValues(formData);
-  const parsed = contactIntakeSchema.safeParse(values);
+  const parsed = contactSchema.safeParse(values);
 
   if (!parsed.success) {
     return {
@@ -50,22 +45,27 @@ export async function submitContactIntake(
   try {
     const db = getDb();
     const lead: NewLead = {
-      ...parsed.data,
-      website: parsed.data.website || null,
-      currentStage: parsed.data.currentStage || null,
-      timeline: parsed.data.timeline || null,
-      message: parsed.data.message || null
+      name: parsed.data.name,
+      email: parsed.data.email,
+      company: parsed.data.company,
+      product: 'General inquiry',
+      targetMarket: 'General',
+      challenge: parsed.data.challenge,
+      website: null,
+      currentStage: null,
+      timeline: null,
+      message: parsed.data.phone || null
     };
     const [createdLead] = await db.insert(leads).values(lead).returning();
 
     return {
-      success: "Thanks. We'll review your details and respond within 1 business day.",
+      success: "Thank you. Our team will be in touch within 1 business day.",
       leadId: createdLead.id
     };
   } catch (error) {
-    console.error('Contact intake failed:', error);
+    console.error('Contact submission failed:', error);
     return {
-      error: 'We could not submit the intake right now. Please try again.',
+      error: 'We could not submit your inquiry at this time. Please try again.',
       values
     };
   }
