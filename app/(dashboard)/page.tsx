@@ -36,10 +36,10 @@ const capabilities = [
 ];
 
 const complexityPoints = [
-  'Operate across trade and payments',
-  'Advise at the strategic level and execute at the financial layer',
-  'Access to global network',
-  'Focus on cost, control, and efficiency of capital movement'
+  'Integrated trade, treasury, and regulatory advisory',
+  'Coordination across jurisdictions, counterparties, and financial systems',
+  'Strategic guidance with operational execution capability',
+  'Global collaboration through the Andersen Consulting network'
 ];
 
 const audiences = [
@@ -189,11 +189,11 @@ export default function HomePage() {
           <div className="grid gap-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
             <div className="max-w-xl">
               <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
-                Built for Cross-Border Complexity
+                Trusted by Global Leaders
               </h2>
               <p className="mt-8 max-w-sm text-lg leading-8 text-brand-text">
-                We are built for transactions that cross jurisdictions,
-                counterparties, currencies, and operational systems.
+                We support organizations operating across borders through
+                integrated trade, treasury, and regulatory advisory services.
               </p>
             </div>
             <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm">
@@ -278,7 +278,7 @@ export default function HomePage() {
       </section>
 
       {/* Dark CTA band */}
-      <section className="bg-white pb-24 sm:pb-28">
+      <section className="bg-white py-24 sm:py-28">
         <div className={containerClassName}>
           <div
             className="rounded-[36px] px-8 py-16 sm:px-12 sm:py-20 lg:flex lg:items-end lg:justify-between lg:px-16"
@@ -289,12 +289,9 @@ export default function HomePage() {
           >
             <div className="max-w-3xl">
               <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Cross-border operations require both strategic clarity and
-                financial precision.
+                Cross-border business require both strategic clarity and
+                operational precision.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-300">
-                We provide both.
-              </p>
             </div>
             <Button
               asChild
