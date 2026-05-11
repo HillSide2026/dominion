@@ -145,7 +145,7 @@ function Footer() {
                 Trade Advisory
               </Link>
               <Link
-                href="/treasury-advisory"
+                href="/treasury"
                 className="text-sm text-slate-500 transition-colors hover:text-white"
               >
                 Treasury Advisory

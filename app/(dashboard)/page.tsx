@@ -31,7 +31,7 @@ const capabilities = [
     description:
       'Cross-border payments, FX optimization, and financial infrastructure support for international operations.',
     icon: Landmark,
-    href: '/treasury-advisory'
+    href: '/treasury'
   }
 ];
 
