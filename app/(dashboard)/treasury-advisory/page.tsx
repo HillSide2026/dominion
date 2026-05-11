@@ -45,17 +45,19 @@ const serviceAreas = [
 ];
 
 const differentiators = [
-  'Not tied to a single provider or institution',
-  'Integrated with trade and regulatory advisory',
-  'Focused on total cost and operational control',
-  'Structured advisory, not transactional execution'
+  'Independent of any single banking or payment institution',
+  'Integrated with international trade and regulatory advisory',
+  'Focused on operational control and treasury efficiency',
+  'Structured advisory rather than transactional execution'
 ];
 
 const idealClients = [
-  'Finance leaders at mid-market businesses with international operations',
-  'Organizations with significant multi-currency exposure',
-  'Companies managing cross-border intercompany flows',
-  'Businesses facing regulatory complexity in treasury operations'
+  'Finance leaders at businesses operating across international trade and supply chains',
+  'Importers and exporters managing multi-jurisdictional operations',
+  'Companies coordinating cross-border supplier and intercompany payment flows',
+  'Organizations with significant multi-currency exposure and settlement requirements',
+  'Businesses navigating treasury, compliance, and regulatory complexity across jurisdictions',
+  'Companies seeking greater operational visibility and control across international financial operations'
 ];
 
 export const metadata: Metadata = {
@@ -139,18 +141,23 @@ export default function TreasuryAdvisoryPage() {
       <ServicePageSection>
         <div className="max-w-[760px]">
           <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
-            Treasury as a strategic function
+            Treasury as a strategic component of international trade
           </h2>
           <div className="mt-8 space-y-7 text-lg leading-8 text-brand-text">
             <p>
-              Most organizations treat cross-border treasury as an operational
-              problem. Cost overruns, currency drag, and settlement delays are
-              managed reactively rather than by design.
+              Many organizations treat treasury as an administrative or
+              operational function rather than a strategic component of
+              international trade and supply chain operations.
             </p>
             <p>
-              We treat treasury as a strategic function — one that should be
-              structured with the same rigour applied to trade and legal
-              arrangements.
+              Currency exposure, settlement friction, supplier payment delays,
+              and working capital inefficiencies are often managed reactively
+              rather than structurally.
+            </p>
+            <p>
+              We believe treasury operations should be designed with the same
+              level of rigor applied to trade, legal, and commercial
+              arrangements across international business operations.
             </p>
           </div>
           <div className="mt-12">
@@ -174,7 +181,7 @@ export default function TreasuryAdvisoryPage() {
           <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
             Who this is for
           </h2>
-          <ul className="mt-10 grid gap-x-10 gap-y-4 text-lg leading-8 text-brand-ink sm:grid-cols-2">
+          <ul className="mt-10 grid gap-x-10 gap-y-5 text-base leading-7 text-brand-ink sm:grid-cols-2">
             {idealClients.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
@@ -185,7 +192,7 @@ export default function TreasuryAdvisoryPage() {
         </div>
       </ServicePageSection>
 
-      <ServicePageCta description="Engage with us to bring structure to your cross-border treasury operations." />
+      <ServicePageCta description="Speak with our team about structuring your international treasury and trade finance operations." />
     </main>
   );
 }

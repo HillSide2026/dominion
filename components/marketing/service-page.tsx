@@ -91,22 +91,24 @@ export function ServicePageCta({
   href = '/contact'
 }: ServicePageCtaProps) {
   return (
-    <ServicePageSection contentClassName="pt-8 pb-24 sm:pb-28 lg:pb-32">
-      <div className="max-w-2xl">
-        <p className="text-2xl font-semibold leading-tight text-brand-ink sm:text-3xl">
-          {description}
-        </p>
-        <Button
-          asChild
-          size="lg"
-          className="mt-8 h-12 rounded-full bg-brand-primary px-7 text-white hover:bg-brand-primary-hover"
-        >
-          <Link href={href}>
-            Speak with us
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </Button>
+    <section className="border-t border-brand-border bg-white">
+      <div className={cn(servicePageContainerClassName, 'py-20 sm:py-24')}>
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+          <p className="max-w-xl text-2xl font-semibold leading-snug tracking-tight text-brand-ink sm:text-3xl">
+            {description}
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="h-12 shrink-0 rounded-full bg-brand-primary px-7 text-white hover:bg-brand-primary-hover"
+          >
+            <Link href={href}>
+              Speak with us
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
       </div>
-    </ServicePageSection>
+    </section>
   );
 }
