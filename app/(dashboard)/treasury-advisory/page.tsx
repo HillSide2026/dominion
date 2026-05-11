@@ -138,6 +138,40 @@ export default function TreasuryAdvisoryPage() {
         </div>
       </ServicePageSection>
 
+      {/* Trade infrastructure bridge */}
+      <section className="relative min-h-[50vh] overflow-hidden lg:min-h-[70vh]">
+        <img
+          src="/brand/trade-infrastructure.jpg"
+          alt="International trade infrastructure"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/38" />
+        <div className="relative mx-auto flex min-h-[50vh] max-w-content items-center px-4 py-20 sm:px-6 lg:min-h-[70vh] lg:px-8 lg:py-28">
+          <div className="max-w-[600px]">
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.08]">
+              Treasury Infrastructure Built Around Global Trade
+            </h2>
+            <div className="mt-7 space-y-5 text-base leading-8 text-slate-200 sm:text-lg">
+              <p>
+                International trade creates operational complexity that extends
+                beyond payments alone.
+              </p>
+              <p>
+                Supplier networks, procurement cycles, cross-border settlement,
+                currency exposure, and intercompany funding all interact across
+                jurisdictions and supply chains.
+              </p>
+              <p>
+                Effective treasury structures support the movement of both
+                capital and commerce, helping organizations reduce friction,
+                improve visibility, and strengthen operational resilience across
+                international operations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ServicePageSection>
         <div className="max-w-[760px]">
           <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
