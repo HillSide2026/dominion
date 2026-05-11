@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import {
   ServicePageCta,
   ServicePageHero,
@@ -139,19 +140,21 @@ export default function TreasuryAdvisoryPage() {
       </ServicePageSection>
 
       {/* Trade infrastructure bridge */}
-      <section className="relative min-h-[50vh] overflow-hidden lg:min-h-[70vh]">
-        <img
-          src="/brand/trade-infrastructure.jpg"
+      <section className="relative min-h-[620px] overflow-hidden">
+        <Image
+          src="/images/trade-infrastructure.jpg"
           alt="International trade infrastructure"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          fill
+          className="object-cover"
+          priority={false}
         />
-        <div className="absolute inset-0 bg-black/38" />
-        <div className="relative mx-auto flex min-h-[50vh] max-w-content items-center px-4 py-20 sm:px-6 lg:min-h-[70vh] lg:px-8 lg:py-28">
-          <div className="max-w-[600px]">
-            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.08]">
-              Treasury Infrastructure Built Around Global Trade
+        <div className="absolute inset-0 bg-slate-950/45" />
+        <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-center px-6 lg:px-8">
+          <div className="max-w-2xl text-white">
+            <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
+              Treasury infrastructure built around global trade
             </h2>
-            <div className="mt-7 space-y-5 text-base leading-8 text-slate-200 sm:text-lg">
+            <div className="mt-8 space-y-5 text-base leading-7 text-white/80 md:text-lg">
               <p>
                 International trade creates operational complexity that extends
                 beyond payments alone.
