@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
   ServicePageCta,
   ServicePageHero,
@@ -143,7 +140,7 @@ export default function TreasuryAdvisoryPage() {
       </ServicePageSection>
 
       {/* Trade infrastructure bridge */}
-      <section className="relative min-h-[620px] overflow-hidden">
+      <section className="relative overflow-hidden border-y border-white/5 py-28 sm:min-h-[620px] lg:min-h-[720px] lg:py-0">
         <Image
           src="/images/trade-infrastructure.jpg"
           alt="International trade infrastructure"
@@ -152,12 +149,14 @@ export default function TreasuryAdvisoryPage() {
           priority={false}
         />
         <div className="absolute inset-0 bg-slate-950/45" />
-        <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-center px-6 lg:px-8">
-          <div className="max-w-2xl text-white">
-            <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/88 via-slate-950/72 to-slate-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
+        <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-6 lg:px-8">
+          <div className="max-w-[620px]">
+            <h2 className="text-5xl font-semibold leading-[1.05] tracking-tight text-white">
               Treasury for Global Trade
             </h2>
-            <div className="mt-8 space-y-5 text-base leading-7 text-white/80 md:text-lg">
+            <div className="mt-8 space-y-6 text-lg leading-8 text-white/82">
               <p>
                 International trade creates treasury and payments challenges.
               </p>
@@ -171,18 +170,6 @@ export default function TreasuryAdvisoryPage() {
                 capital and commerce, helping organizations reduce friction,
                 improve visibility, and strengthen global resilience.
               </p>
-            </div>
-            <div className="mt-10">
-              <Button
-                asChild
-                size="lg"
-                className="h-12 rounded-full bg-white px-7 text-brand-ink hover:bg-slate-100"
-              >
-                <Link href="/contact">
-                  Speak with us
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
             </div>
           </div>
         </div>
