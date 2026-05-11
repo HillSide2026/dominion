@@ -97,10 +97,8 @@ function Footer() {
       <div className="mx-auto max-w-content px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-base font-semibold text-white">
-              Dominion Partners
-            </p>
-            <p className="mt-2 text-sm text-slate-500">
+            <FlowSignalLogo lockup variant="white" imageClassName="h-8" />
+            <p className="mt-3 text-sm text-slate-500">
               Cross-border trade and payments advisory
             </p>
           </div>
