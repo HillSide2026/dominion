@@ -155,23 +155,21 @@ export default function TreasuryAdvisoryPage() {
         <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-center px-6 lg:px-8">
           <div className="max-w-2xl text-white">
             <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
-              Treasury infrastructure built around global trade
+              Treasury for Global Trade
             </h2>
             <div className="mt-8 space-y-5 text-base leading-7 text-white/80 md:text-lg">
               <p>
-                International trade creates operational complexity that extends
-                beyond payments alone.
+                International trade creates treasury and payments challenges.
               </p>
               <p>
                 Supplier networks, procurement cycles, cross-border settlement,
                 currency exposure, and intercompany funding all interact across
-                jurisdictions and supply chains.
+                multiple jurisdictions.
               </p>
               <p>
                 Effective treasury structures support the movement of both
                 capital and commerce, helping organizations reduce friction,
-                improve visibility, and strengthen operational resilience across
-                international operations.
+                improve visibility, and strengthen global resilience.
               </p>
             </div>
             <div className="mt-10">
