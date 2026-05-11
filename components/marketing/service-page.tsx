@@ -30,21 +30,34 @@ export function ServicePageHero({
   description
 }: ServicePageHeroProps) {
   return (
-    <section className="bg-white">
+    <section
+      className="relative overflow-hidden"
+      style={{
+        background:
+          'linear-gradient(to right, var(--color-brand-navy) 0%, var(--color-brand-navy-end) 100%)'
+      }}
+    >
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 60% at 70% -10%, rgba(75,158,255,0.10), transparent)'
+        }}
+      />
       <div
         className={cn(
           servicePageContainerClassName,
-          'py-28 sm:py-32 lg:py-40'
+          'relative py-20 sm:py-24'
         )}
       >
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-eyebrow text-brand-primary">
+        <div className="max-w-[780px]">
+          <p className="text-sm font-semibold uppercase tracking-eyebrow text-brand-on-dark">
             {eyebrow}
           </p>
-          <h1 className="mt-6 text-5xl font-semibold tracking-[-0.04em] text-brand-ink sm:text-6xl lg:text-[4.5rem] lg:leading-[1.02]">
+          <h1 className="mt-5 text-5xl font-semibold tracking-tight leading-[1.06] text-white sm:text-6xl">
             {title}
           </h1>
-          <p className="mt-8 max-w-2xl text-xl leading-9 text-brand-text">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             {description}
           </p>
         </div>

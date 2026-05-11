@@ -7,70 +7,70 @@ import {
 
 const serviceAreas = [
   {
-    title: 'Payment Infrastructure',
-    text: 'Designing how funds move between counterparties.',
+    title: 'Cross-Border Payment Infrastructure',
+    text: 'Designing how funds move across entities, counterparties, and jurisdictions.',
     items: [
-      'Cross-border payables and receivables',
-      'Multi-currency payment flows',
-      'Provider selection and structuring'
+      'Multi-currency payables and receivables',
+      'Provider selection and structuring',
+      'Settlement efficiency and cost reduction'
     ]
   },
   {
-    title: 'FX Optimization',
-    text: 'Managing how and where currency conversion occurs.',
+    title: 'FX Strategy and Optimization',
+    text: 'Managing currency exposure across international operations.',
     items: [
-      'Currency conversion strategy',
-      'Spread reduction',
+      'Currency exposure assessment',
+      'Conversion strategy and spread reduction',
       'Timing and routing optimization'
     ]
   },
   {
-    title: 'Flow Structuring',
-    text: 'Mapping and aligning transaction flows end to end.',
+    title: 'Treasury Structuring',
+    text: 'Aligning financial flows with operational and trade structures.',
     items: [
-      'Payment flow mapping',
-      'Alignment with trade structures',
-      'Reduction of friction and cost leakage'
+      'Payment flow mapping and alignment',
+      'Intercompany and internal funding flows',
+      'Friction reduction and cost leakage control'
     ]
   },
   {
-    title: 'Ongoing Optimization',
-    text: 'Ensuring performance as complexity increases.',
+    title: 'Regulatory and Compliance Alignment',
+    text: 'Ensuring treasury operations meet jurisdictional requirements.',
     items: [
-      'Monitoring pricing and execution',
-      'Adjusting providers and routing',
-      'Scaling with business growth'
+      'Cross-border reporting obligations',
+      'Currency control and repatriation requirements',
+      'Tax and transfer pricing considerations'
     ]
   }
 ];
 
 const differentiators = [
-  'Not tied to a single provider',
-  'Integrated with trade advisory',
-  'Focused on total cost, not headline rates',
-  'Structured, not transactional'
+  'Not tied to a single provider or institution',
+  'Integrated with trade and regulatory advisory',
+  'Focused on total cost and operational control',
+  'Structured advisory, not transactional execution'
 ];
 
 const idealClients = [
-  'Businesses with significant foreign exchange exposure',
-  'Companies paying or receiving internationally',
-  'Firms with inefficient or fragmented payment setups',
-  'High-growth cross-border operators'
+  'Finance leaders at mid-market businesses with international operations',
+  'Organizations with significant multi-currency exposure',
+  'Companies managing cross-border intercompany flows',
+  'Businesses facing regulatory complexity in treasury operations'
 ];
 
 export const metadata: Metadata = {
-  title: 'Cross-Border Payment Services | Dominion Partners',
+  title: 'Treasury Advisory | Dominion Partners',
   description:
-    'Structuring and optimizing how money moves internationally.'
+    'Cross-border treasury advisory for finance leaders managing international operations.'
 };
 
-export default function PaymentServicesPage() {
+export default function TreasuryAdvisoryPage() {
   return (
     <main className="bg-white">
       <ServicePageHero
-        eyebrow="Payment Services"
-        title="Cross-Border Payment Services"
-        description="Structuring and optimizing how money moves internationally."
+        eyebrow="Treasury Advisory"
+        title="Treasury Advisory"
+        description="Cross-border treasury advisory for finance leaders managing international operations."
       />
 
       <ServicePageSection>
@@ -80,17 +80,19 @@ export default function PaymentServicesPage() {
           </h2>
           <div className="mt-8 space-y-7 text-lg leading-8 text-brand-text">
             <p>
-              We support businesses in managing the financial layer of
-              cross-border activity including payments, foreign exchange, and
-              settlement.
+              Finance leaders at global businesses face treasury complexity that
+              generic providers are not equipped to solve.
             </p>
             <p>
-              Our approach focuses on efficiency, transparency, and control
-              across the full lifecycle of a transaction.
+              We bring together legal, compliance, and commercial expertise to
+              design treasury structures that work across jurisdictions —
+              addressing payment infrastructure, FX exposure, intercompany
+              flows, and regulatory alignment in a single integrated mandate.
             </p>
             <p>
-              We work across providers and jurisdictions to ensure that payment
-              flows align with underlying trade structures.
+              Our work is advisory. We design the structure and the strategy,
+              and coordinate execution across your existing providers and
+              institutions.
             </p>
           </div>
         </div>
@@ -135,11 +137,19 @@ export default function PaymentServicesPage() {
       <ServicePageSection>
         <div className="max-w-[760px]">
           <h2 className="text-3xl font-semibold tracking-tight text-brand-ink sm:text-4xl">
-            Payments as infrastructure
+            Treasury as a strategic function
           </h2>
           <div className="mt-8 space-y-7 text-lg leading-8 text-brand-text">
-            <p>Most businesses treat payments as an afterthought.</p>
-            <p>We treat them as a core part of cross-border strategy.</p>
+            <p>
+              Most organizations treat cross-border treasury as an operational
+              problem. Cost overruns, currency drag, and settlement delays are
+              managed reactively rather than by design.
+            </p>
+            <p>
+              We treat treasury as a strategic function — one that should be
+              structured with the same rigour applied to trade and legal
+              arrangements.
+            </p>
           </div>
           <div className="mt-12">
             <h3 className="text-xl font-semibold text-brand-ink">
@@ -173,7 +183,7 @@ export default function PaymentServicesPage() {
         </div>
       </ServicePageSection>
 
-      <ServicePageCta description="Optimize how your business moves money across borders." />
+      <ServicePageCta description="Engage with us to bring structure to your cross-border treasury operations." />
     </main>
   );
 }

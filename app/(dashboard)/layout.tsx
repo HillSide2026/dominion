@@ -147,10 +147,10 @@ function Footer() {
                 Trade Advisory
               </Link>
               <Link
-                href="/payment-services"
+                href="/treasury-advisory"
                 className="text-sm text-slate-500 transition-colors hover:text-white"
               >
-                Payment Services
+                Treasury Advisory
               </Link>
             </nav>
           </div>
