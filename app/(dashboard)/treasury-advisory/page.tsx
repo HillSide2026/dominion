@@ -8,34 +8,34 @@ import {
 const serviceAreas = [
   {
     title: 'Cross-Border Payment Infrastructure',
-    text: 'Designing how funds move across entities, counterparties, and jurisdictions.',
+    text: 'Designing payment and settlement structures that support international suppliers, counterparties, and trade operations.',
     items: [
-      'Multi-currency payables and receivables',
-      'Provider selection and structuring',
-      'Settlement efficiency and cost reduction'
+      'Multi-currency supplier and receivables flows',
+      'Banking and payment provider structuring',
+      'Settlement efficiency across trade corridors'
     ]
   },
   {
     title: 'FX Strategy and Optimization',
-    text: 'Managing currency exposure across international operations.',
+    text: 'Managing currency exposure across international trade and procurement operations.',
     items: [
-      'Currency exposure assessment',
+      'FX exposure linked to procurement and trade cycles',
       'Conversion strategy and spread reduction',
-      'Timing and routing optimization'
+      'Settlement timing and liquidity optimization'
     ]
   },
   {
     title: 'Treasury Structuring',
-    text: 'Aligning financial flows with operational and trade structures.',
+    text: 'Aligning treasury operations with trade structures, supply chain flows, and multi-entity operations.',
     items: [
-      'Payment flow mapping and alignment',
-      'Intercompany and internal funding flows',
-      'Friction reduction and cost leakage control'
+      'Intercompany funding and settlement structures',
+      'Working capital flow alignment',
+      'Treasury visibility across jurisdictions and entities'
     ]
   },
   {
     title: 'Regulatory and Compliance Alignment',
-    text: 'Ensuring treasury operations meet jurisdictional requirements.',
+    text: 'Supporting treasury operations across cross-border trade and jurisdictional compliance environments.',
     items: [
       'Cross-border reporting obligations',
       'Currency control and repatriation requirements',
@@ -59,9 +59,9 @@ const idealClients = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Treasury Advisory | Dominion Partners',
+  title: 'Treasury & Trade Finance Advisory | Dominion Partners',
   description:
-    'Cross-border treasury advisory for finance leaders managing international operations.'
+    'Treasury advisory for businesses managing international trade, cross-border payments, and global supply chains.'
 };
 
 export default function TreasuryAdvisoryPage() {
@@ -69,8 +69,8 @@ export default function TreasuryAdvisoryPage() {
     <main className="bg-white">
       <ServicePageHero
         eyebrow="Treasury Advisory"
-        title="Treasury Advisory"
-        description="Cross-border treasury advisory for finance leaders managing international operations."
+        title="Treasury & Trade Finance Advisory"
+        description="Treasury advisory for businesses managing international trade, cross-border payments, and global supply chains."
       />
 
       <ServicePageSection>
@@ -80,19 +80,21 @@ export default function TreasuryAdvisoryPage() {
           </h2>
           <div className="mt-8 space-y-7 text-lg leading-8 text-brand-text">
             <p>
-              Finance leaders at global businesses face treasury complexity that
-              generic providers are not equipped to solve.
+              Businesses operating across international trade and supply chains
+              face treasury complexity that standard banking and payment
+              structures are not designed to solve.
             </p>
             <p>
-              We bring together legal, compliance, and commercial expertise to
-              design treasury structures that work across jurisdictions —
-              addressing payment infrastructure, FX exposure, intercompany
-              flows, and regulatory alignment in a single integrated mandate.
+              We bring together trade, legal, compliance, and commercial
+              expertise to design treasury structures that support cross-border
+              procurement, supplier payments, intercompany flows, and
+              international settlement requirements across jurisdictions.
             </p>
             <p>
-              Our work is advisory. We design the structure and the strategy,
-              and coordinate execution across your existing providers and
-              institutions.
+              Our role is advisory and strategic. We help organizations
+              structure treasury operations around the realities of
+              international trade, supply chain movement, currency exposure,
+              and multi-entity operations.
             </p>
           </div>
         </div>
