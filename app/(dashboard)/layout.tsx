@@ -82,7 +82,7 @@ function Header({ isPortal }: { isPortal: boolean }) {
           isPortal ? 'w-full' : 'mx-auto max-w-content'
         }`}
       >
-        <FlowSignalLogo />
+        <FlowSignalLogo lockup />
         <Suspense fallback={<div className="h-9 w-16" />}>
           <UserMenu />
         </Suspense>

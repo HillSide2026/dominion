@@ -17,13 +17,9 @@ export function FlowSignalLogo({
   return (
     <Link href={href} className={cn('inline-flex items-center', className)}>
       <img
-        src={lockup ? '/brand/dominion-logo.png' : '/brand/dominion-mark.png'}
+        src={lockup ? '/brand/dominion-logo-cropped.png' : '/brand/dominion-mark.png'}
         alt="Dominion Partners"
-        className={cn(
-          'w-auto object-contain',
-          lockup ? 'h-10' : 'h-9',
-          imageClassName
-        )}
+        className={cn('h-9 w-auto object-contain', imageClassName)}
       />
     </Link>
   );
