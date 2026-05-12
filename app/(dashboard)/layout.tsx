@@ -150,6 +150,12 @@ function Footer() {
               >
                 Treasury Advisory
               </Link>
+              <Link
+                href="/defence"
+                className="text-sm text-slate-500 transition-colors hover:text-white"
+              >
+                Defence
+              </Link>
             </nav>
           </div>
           <div>

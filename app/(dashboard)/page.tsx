@@ -23,7 +23,7 @@ const capabilities = [
     description:
       'Advising organizations on tariffs, trade barriers, customs issues, compliance matters, and regulatory challenges affecting international operations.',
     icon: Scale,
-    href: '/trade-advisory'
+    href: '/defence'
   },
   {
     label: 'TREASURY SERVICES',
