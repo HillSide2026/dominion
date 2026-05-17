@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Home, LogOut } from 'lucide-react';
+import { Home, LogOut, Menu, X } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -76,6 +76,8 @@ function UserMenu() {
 }
 
 function SiteHeader() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <header className="border-b border-brand-border bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -93,10 +95,39 @@ function SiteHeader() {
             ))}
           </nav>
         </div>
-        <Suspense fallback={<div className="h-9 w-16" />}>
-          <UserMenu />
-        </Suspense>
+        <div className="flex items-center gap-3">
+          <Suspense fallback={<div className="h-9 w-16" />}>
+            <UserMenu />
+          </Suspense>
+          <button
+            type="button"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMobileOpen((v) => !v)}
+            className="inline-flex items-center justify-center rounded p-1.5 text-brand-ink transition-colors hover:bg-brand-muted md:hidden"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
+
+      {mobileOpen && (
+        <div id="mobile-nav" className="border-t border-brand-border bg-white md:hidden">
+          <nav className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+            {headerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 text-sm font-medium text-brand-text transition-colors hover:text-brand-ink border-b border-brand-border last:border-0"
+              >
+                {link.text}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

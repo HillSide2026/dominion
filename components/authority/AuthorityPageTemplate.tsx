@@ -21,7 +21,7 @@ export function AuthorityPageTemplate({ page }: { page: AuthorityPage }) {
         </div>
       </section>
 
-      {/* Body */}
+      {/* Overview */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-6 text-lg leading-8 text-brand-text">
@@ -32,9 +32,51 @@ export function AuthorityPageTemplate({ page }: { page: AuthorityPage }) {
         </div>
       </section>
 
+      {/* Common risks */}
+      {page.commonRisks.length > 0 && (
+        <section className="border-t border-brand-border bg-brand-muted">
+          <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-2">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-brand-ink">
+                  Common risk areas
+                </h2>
+                <p className="mt-3 text-base text-brand-text">
+                  Where organizations typically encounter exposure in this area.
+                </p>
+                <ul className="mt-8 space-y-4">
+                  {page.commonRisks.map((risk) => (
+                    <li key={risk} className="flex items-start gap-3 text-base leading-7 text-brand-text">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
+                      {risk}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-brand-ink">
+                  How Dominion helps
+                </h2>
+                <p className="mt-3 text-base text-brand-text">
+                  Practical support for organizations managing this exposure.
+                </p>
+                <ul className="mt-8 space-y-4">
+                  {page.howWeHelp.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-base leading-7 text-brand-text">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Related topics */}
       {page.relatedTopics.length > 0 && (
-        <section className="border-t border-brand-border bg-brand-muted">
+        <section className="border-t border-brand-border bg-white">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
             <h2 className="mb-8 text-2xl font-semibold tracking-tight text-brand-ink">
               Related topics
@@ -57,12 +99,12 @@ export function AuthorityPageTemplate({ page }: { page: AuthorityPage }) {
 
       {/* Insights */}
       {page.insightLinks.length > 0 && (
-        <section className="border-t border-brand-border bg-white">
+        <section className="border-t border-brand-border bg-brand-muted">
           <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
             <h2 className="mb-8 text-2xl font-semibold tracking-tight text-brand-ink">Insights</h2>
             <div className="grid gap-4 md:grid-cols-3">
               {page.insightLinks.map((insight) => (
-                <article key={insight.title} className="border border-brand-border p-5">
+                <article key={insight.title} className="border border-brand-border bg-white p-5">
                   <h3 className="font-semibold text-brand-ink">{insight.title}</h3>
                   <p className="mt-2 text-sm text-brand-text">{insight.description}</p>
                   <Link
@@ -79,7 +121,7 @@ export function AuthorityPageTemplate({ page }: { page: AuthorityPage }) {
       )}
 
       {/* CTA */}
-      <section className="border-t border-brand-border bg-brand-muted">
+      <section className="border-t border-brand-border bg-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-2xl font-semibold tracking-tight text-brand-ink">
