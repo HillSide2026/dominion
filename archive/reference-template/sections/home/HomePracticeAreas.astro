@@ -1,0 +1,29 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { fintracClusterLinks } from '~/data/authorityPages';
+import { getPermalink } from '~/utils/permalinks';
+
+const areas = fintracClusterLinks;
+---
+
+<WidgetWrapper id="practice-areas">
+  <div class="mb-10 max-w-3xl">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-secondary dark:text-blue-200">Legal topics</p>
+    <h2 class="font-heading text-3xl font-bold leading-tight tracking-tight text-heading md:text-4xl">
+      Legal Insights For The Work Fintech Teams Actually Face.
+    </h2>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    {
+      areas.map((area) => (
+        <a class="block border border-gray-200 p-5 transition hover:border-primary dark:border-slate-700" href={area.href}>
+          <h3 class="text-lg font-semibold text-heading">{area.title}</h3>
+          <p class="mt-2 text-muted">{area.description}</p>
+        </a>
+      ))
+    }
+  </div>
+  <div class="mt-8">
+    <a class="font-semibold text-primary hover:underline" href={getPermalink('/fintrac-compliance')}>View all Topics</a>
+  </div>
+</WidgetWrapper>
