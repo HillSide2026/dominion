@@ -5,8 +5,8 @@ export const site = {
       'We advise, represent, and support organizations operating across borders to achieve market access and remove trade barriers.'
   },
   hero: {
-    eyebrow: 'Dominion Partners — Collaborating firm of Andersen Consulting',
-    title: 'Global Trade Advisory for Sustainable Development.',
+    eyebrow: 'Dominion Partners',
+    title: 'Global Trade Advisory & Strategy.',
     description:
       'We advise, represent, and support organizations operating across borders to achieve market access and remove trade barriers.',
     primaryCta: { label: 'Speak with us', href: '/contact' },
