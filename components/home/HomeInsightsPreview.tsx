@@ -3,7 +3,7 @@ import { insightLinks } from '@/lib/authority-pages';
 
 export function HomeInsightsPreview() {
   return (
-    <section id="insights">
+    <section id="insights" className="bg-[#fafaf9]">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-20">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
@@ -23,7 +23,7 @@ export function HomeInsightsPreview() {
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {insightLinks.map((insight) => (
-            <article key={insight.title} className="border border-brand-border p-5">
+            <article key={insight.title} className="border border-brand-border bg-white p-5">
               <h3 className="text-lg font-semibold text-brand-ink">{insight.title}</h3>
               <p className="mt-2 text-brand-text">{insight.description}</p>
               <Link

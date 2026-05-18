@@ -3,8 +3,8 @@ import { verticalLinks } from '@/lib/vertical-pages';
 
 export function HomeIndustries() {
   return (
-    <section id="services" className="bg-brand-muted">
-      <div className="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-20">
+    <section id="services">
+      <div className="mx-auto max-w-7xl px-4 pb-14 md:px-6 md:pb-20">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand-primary">

@@ -3,7 +3,7 @@ import { site } from '@/lib/site';
 export function HomeSystemMap() {
   const { systemMap } = site;
   return (
-    <section id="system-map" className="bg-brand-muted">
+    <section id="system-map" className="bg-[#fafaf9]">
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-20">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
@@ -19,7 +19,7 @@ export function HomeSystemMap() {
             {systemMap.pillars.map((pillar) => (
               <article
                 key={pillar.title}
-                className="border border-brand-border bg-white p-5 shadow-soft"
+                className="border border-brand-border bg-white p-5 shadow-sm"
               >
                 <h3 className="text-lg font-semibold text-brand-ink">{pillar.title}</h3>
                 <p className="mt-2 text-brand-text">{pillar.description}</p>

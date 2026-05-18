@@ -6,7 +6,7 @@ import { site } from '@/lib/site';
 export function HomeHero() {
   const { hero } = site;
   return (
-    <section className="relative">
+    <section className="relative not-prose">
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-24 lg:py-28">
         <div className="max-w-4xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-brand-primary">
@@ -31,7 +31,7 @@ export function HomeHero() {
             <Button
               asChild
               variant="outline"
-              className="h-12 rounded-full border-brand-border px-7 text-brand-ink hover:bg-brand-muted"
+              className="h-12 rounded-full border-brand-border px-7 text-brand-ink hover:bg-[#fafaf9]"
             >
               <Link href={hero.secondaryCta.href}>{hero.secondaryCta.label}</Link>
             </Button>
