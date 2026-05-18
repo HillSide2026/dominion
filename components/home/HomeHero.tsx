@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { site } from '@/lib/site';
 
 export function HomeHero() {
@@ -19,22 +17,12 @@ export function HomeHero() {
             {hero.description}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button
-              asChild
-              className="h-12 rounded-full bg-brand-primary px-7 text-white hover:bg-brand-primary-hover"
-            >
-              <Link href={hero.primaryCta.href}>
-                {hero.primaryCta.label}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-12 rounded-full border-brand-border px-7 text-brand-ink hover:bg-[#fafaf9]"
-            >
-              <Link href={hero.secondaryCta.href}>{hero.secondaryCta.label}</Link>
-            </Button>
+            <Link href={hero.primaryCta.href} className="btn-primary">
+              {hero.primaryCta.label}
+            </Link>
+            <Link href={hero.secondaryCta.href} className="btn-secondary">
+              {hero.secondaryCta.label}
+            </Link>
           </div>
         </div>
       </div>

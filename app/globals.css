@@ -285,3 +285,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full border border-gray-400 bg-transparent text-base font-medium leading-snug text-brand-ink transition duration-200 ease-in py-3.5 px-6 hover:bg-gray-100 hover:border-gray-600 md:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full border border-brand-primary bg-brand-primary text-base font-semibold leading-snug text-white transition duration-200 ease-in py-3.5 px-6 hover:bg-brand-primary-hover hover:border-brand-primary-hover hover:text-white md:px-8;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-gray-400 bg-transparent text-base font-medium leading-snug text-brand-ink transition duration-200 ease-in py-3.5 px-6 hover:bg-gray-100 hover:border-gray-600 md:px-8;
+  }
+}

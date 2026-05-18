@@ -3,7 +3,7 @@ import { verticalLinks } from '@/lib/vertical-pages';
 
 export function HomeIndustries() {
   return (
-    <section id="services" className="relative scroll-mt-[72px]">
+    <section id="industries" className="relative not-prose scroll-mt-[72px]">
       <div className="mx-auto max-w-7xl px-4 pb-12 md:px-6 md:pb-16 lg:pb-20">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
@@ -28,7 +28,7 @@ export function HomeIndustries() {
             {verticalLinks.map((service) => (
               <li key={service.title}>
                 <Link
-                  className="block border border-brand-border px-4 py-3 font-medium text-brand-ink transition-colors hover:border-brand-primary"
+                  className="block border border-brand-border px-4 py-3 font-medium text-brand-ink transition hover:border-brand-primary"
                   href={service.href}
                 >
                   {service.title}

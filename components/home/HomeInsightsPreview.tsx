@@ -3,7 +3,7 @@ import { insightLinks } from '@/lib/authority-pages';
 
 export function HomeInsightsPreview() {
   return (
-    <section id="insights" className="relative scroll-mt-[72px]">
+    <section id="insights" className="relative not-prose scroll-mt-[72px]">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16 lg:py-20">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
@@ -14,10 +14,7 @@ export function HomeInsightsPreview() {
               Practical writing for international trade teams.
             </h2>
           </div>
-          <Link
-            className="shrink-0 font-semibold text-brand-primary hover:underline"
-            href="/insights"
-          >
+          <Link className="font-semibold text-brand-primary hover:underline" href="/insights">
             Read insights
           </Link>
         </div>
