@@ -6,7 +6,7 @@ export const site = {
   },
   hero: {
     eyebrow: 'Dominion Partners',
-    title: 'Global Trade Advisory & Strategy.',
+    title: 'Global Trade Advisory & Strategy',
     description:
       'We advise, represent, and support organizations operating across borders to achieve market access and remove trade barriers.',
     primaryCta: { label: 'Speak with us', href: '/contact' },

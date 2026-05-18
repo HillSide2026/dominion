@@ -6,7 +6,7 @@ import { site } from '@/lib/site';
 export function HomeGuideCTA() {
   const { guideCta } = site;
   return (
-    <section id="guide">
+    <section id="guide" className="relative scroll-mt-[72px]">
       <div className="mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-14">
         <div className="border border-brand-border p-6 md:p-8">
           <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">

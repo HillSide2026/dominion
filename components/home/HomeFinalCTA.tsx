@@ -5,7 +5,7 @@ import { site } from '@/lib/site';
 export function HomeFinalCTA() {
   const { finalCta } = site;
   return (
-    <section id="contact" className="bg-[#fafaf9]">
+    <section id="contact" className="relative scroll-mt-[72px]">
       <div className="mx-auto max-w-7xl px-4 py-14 text-center md:px-6 md:py-20">
         <div className="mx-auto max-w-3xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-brand-primary">
