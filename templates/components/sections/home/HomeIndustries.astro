@@ -1,0 +1,38 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import { verticalLinks } from '~/data/authorityPages';
+import { getPermalink } from '~/utils/permalinks';
+
+const industries = verticalLinks;
+---
+
+<WidgetWrapper id="industries" containerClass="pt-0">
+  <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <div>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-secondary dark:text-blue-200">Industries</p>
+      <h2 class="font-heading text-3xl font-bold leading-tight tracking-tight text-heading md:text-4xl">
+        Focused on fintech and financial services.
+      </h2>
+      <p class="mt-4 text-lg text-muted">
+        The work is built for companies operating where software, money movement, data, and regulation meet.
+      </p>
+      <a class="mt-6 inline-block font-semibold text-primary hover:underline" href={getPermalink('/payments')}>
+        Explore industries
+      </a>
+    </div>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {
+        industries.map((industry) => (
+          <li>
+            <a
+              class="block border border-gray-200 px-4 py-3 font-medium text-heading transition hover:border-primary dark:border-slate-700"
+              href={industry.href}
+            >
+              {industry.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</WidgetWrapper>
