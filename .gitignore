@@ -40,3 +40,5 @@ next-env.d.ts
 postgres_data/
 .env*.local
 _flowsignal_archive/
+new site/.astro/
+new site/node_modules/
